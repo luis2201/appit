@@ -1,0 +1,14 @@
+.text-uppercase{
+  text-transform: uppercase;
+}
+
+.text-lowercase{
+  text-transform: lowercase;
+}
+
+.texto-vertical {
+  writing-mode: vertical-lr;
+  /*transform: rotate(180deg);*/
+  text-align: center;
+  word-break: break-word;
+}

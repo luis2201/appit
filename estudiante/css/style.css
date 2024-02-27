@@ -1,0 +1,12 @@
+.text-uppercase{
+  text-transform: uppercase;
+}
+
+.text-lowercase{
+  text-transform: lowercase;
+}
+
+.verticalText {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  }
