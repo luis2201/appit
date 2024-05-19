@@ -1,0 +1,57 @@
+<?php
+
+    class EstudianteController
+    {
+
+        public function findestudiantelista()
+        {
+            $data = json_decode(file_get_contents('php://input'));
+
+            $idperiodo = Main::limpiar_cadena($data->idperiodo);
+            $idcarrera = Main::limpiar_cadena($data->idcarrera);
+            $modalidad = Main::limpiar_cadena($data->modalidad);
+            $idnivel = Main::limpiar_cadena($data->idnivel);
+            
+            $idperiodo = Main::decryption($idperiodo);
+            $idcarrera = Main::decryption($idcarrera);
+            $idnivel = Main::decryption($idnivel);
+
+            $param = [":idperiodo" => $idperiodo, ":idcarrera" => $idcarrera, ":modalidad" => $modalidad, ":idnivel" => $idnivel];
+            $res = Matricula::findEstudianteLista($param);
+
+            $thead = '<table id="tbLista" class="table table-condensed table-hover" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Nº Matrícula</th>
+                                <th class="text-center">Nº Identificación</th>
+                                <th class="text-center">Nómina de Estudiantes</th>
+                                <th class="text-center">Estado Datos</th>
+                                <th class="text-center">Estado Matrícula</th>
+                                <th class="text-center"></th>
+                            </tr>
+                        </thead>
+                        <tbody>';
+            
+            $tbody = '';
+            foreach ($res as $row) {
+                $estadodatos = ($row->estadodatos == 'A')?'<span class="badge bg-success">Actualizado</span>':'<span class="badge bg-secondary">Registrado</span>';
+                $estadomatricula = ($row->estadomatricula)?'<span class="badge bg-success">Matriculado</span>':'<span class="badge bg-warning">Pendiente</span>';
+                $tbody .='<tr>
+                            <td class="text-center">'.$row->numero_matricula.'</td>
+                            <td class="text-center">'.$row->numero_identificacion.'</td>
+                            <td>'.$row->estudiantes.'</td>
+                            <td class="text-center">'.$estadodatos.'</td>
+                            <td class="text-center">'.$estadomatricula.'</td>
+                            <td class="text-center">
+                                <button id="'.Main::encryption($row->idmatricula).'" type="submit" class="btn btn-primary btn-sm" onclick="verMaterias(this.id)"><i class="fas fa-eye"></i> Modificar Materias</button>
+                            </td>
+                        </tr>';    
+            }
+            
+            $tfoot = '</tbody>
+                    </table>';
+
+            echo json_encode($thead . $tbody . $tfoot);
+        }
+
+    }
