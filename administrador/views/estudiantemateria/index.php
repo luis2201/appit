@@ -5,7 +5,7 @@
   <div aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="javascript:;">Estudiantes</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Agregar-Modificar Materia</li>
+      <li class="breadcrumb-item active" aria-current="page">Agregar-Eliminar Materia</li>
     </ol>
   </div>
 
@@ -72,18 +72,43 @@
 
 <!-- Modal -->
 <div class="modal fade" id="modalMaterias" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalMateriasLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalMateriasLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="modalMateriasLabel">Agregar/Eliminar Materias</h5>
+        <button type="button" id="btnCerrar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
-      </div>
+        <div class="row">
+          <div class="col-md-2">
+              <label for="numero_matricula">Nº Matrícula</label>
+              <input type="text" name="numero_matricula" id="numero_matricula" class="form-control" disabled>
+          </div>
+          <div class="col-md-2">
+              <label for="numero_identificacion">Nº Identificación</label>
+              <input type="text" name="numero_identificacion" id="numero_identificacion" class="form-control" disabled>
+          </div>
+          <div class="col-md-8">
+              <label for="nombreestudiante">Apellidos y Nombres</label>
+              <input type="text" name="nombreestudiante" id="nombreestudiante" class="form-control" disabled>
+          </div>
+        </div>
+        <div class="row p-2">
+          <div class="col-md-10">
+            <label for="carrera">Carrera</label>            
+            <input type="text" name="carrera" id="carrera" class="form-control" value="<?php echo $row->carrera; ?>" disabled>
+          </div>
+          <div class="col-md-2">
+            <label for="nivel">Semestre</label>
+            <input type="text" name="nivel" id="nivel" class="form-control" value="<?php echo $row->nivel; ?>" disabled>
+          </div>
+        </div>
+        <div id="tbMaterias" class="row" style="height:25%">
+        
+        </div>
+      </div>      
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+        
       </div>
     </div>
   </div>
@@ -92,7 +117,7 @@
 <?php include_once './views/layout/footer.php' ?>
 <!--    Scripts -->
 <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-<script src="<?php echo DIR; ?>functions/estudiante-materia.js?v=1.1.0"></script>
+<script src="<?php echo DIR; ?>functions/estudiante-materia.js?v=1.1.6"></script>
 </body>
 
 </html>

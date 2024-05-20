@@ -39,7 +39,7 @@
                         <h6 class="collapse-header">Datos y tipo:</h6>
                         <a class="collapse-item" href="cambiotipoestudiante">Cambiar tipo</a>
                         <a class="collapse-item" href="cedulacorreoestudiante">Cambiar cédula-correo</a>
-                        <a class="collapse-item" href="estudiantemateria">Agregar/Modicar materia</a>
+                        <a class="collapse-item" href="estudiantemateria">Agregar/Eliminar materia</a>
                     </div>
                 </div>
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#matricula" aria-expanded="true" aria-controls="matricula" style="padding: 0.5em 1em;">

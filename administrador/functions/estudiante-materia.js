@@ -1,4 +1,5 @@
 var idperiodo = document.getElementById("cmbidperiodo").value;
+var modalMaterias = new bootstrap.Modal(document.getElementById('modalMaterias'), {keyboard: false, backdrop:'static'})
 
 var idcarrera = document.getElementById("idcarrera");
 idcarrera.addEventListener("change", async function () {
@@ -119,14 +120,22 @@ btnMostrar.addEventListener("click", async function () {
 });
 
 async function verMaterias(idmatricula)
-{
+{    
     await axios.post(DIR + 'matricula/finddatosmatricula', {
         idmatricula
     })
     .then(function (res) {
-        let info = res.data;
+        let info = res.data[0];
 
-        console.log(info)
+        document.getElementById("numero_matricula").value = info.numero_matricula;
+        document.getElementById("numero_identificacion").value = info.numero_identificacion;
+        document.getElementById("nombreestudiante").value = info.estudiante;        
+        document.getElementById("carrera").value = info.carrera;
+        document.getElementById("nivel").value = info.nivel;        
+
+        cargaMaterias();
+
+        modalMaterias.show();        
     })
     .catch(function (error) {
         console.log(error);
@@ -145,6 +154,43 @@ async function verMaterias(idmatricula)
         });
     });
 }
+
+async function cargaMaterias()
+{
+    idperiodo = document.getElementById("cmbidperiodo").value;
+    idcarrera = document.getElementById("idcarrera").value;
+
+    await axios.post(DIR + 'materia/findmateriaidcarrera', {
+        idperiodo,
+        idcarrera
+    })
+    .then(function (res) {
+        let table = res.data;
+
+        document.getElementById("tbMaterias").innerHTML = table;
+    })
+    .catch(function (error) {
+        console.log(error);
+        $.confirm({
+            title: 'Acceso no autorizado',
+            icon: 'fa fa-exclamation-triangle',
+            content: error.data,
+            theme: 'modern',
+            type: 'red',
+            typeAnimated: true,
+            buttons: {
+                aceptar: function () {
+
+                }
+            }
+        });
+    });
+}
+
+var btnCerrar = document.getElementById("btnCerrar");
+btnCerrar.addEventListener("click", function() {
+    modalMaterias.hide();
+});
 
 function validate() {
     var flag = true;

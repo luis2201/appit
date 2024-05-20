@@ -3,17 +3,17 @@
     class MatriculaController
     {
 
-        public function index()
+        public function finddatosmatricula()
         {
-            $periodos = Periodo::findActivo();
-            foreach($periodos as $row){
-                $idperiodo = $row->idperiodo;
-            }
+            $data = json_decode(file_get_contents('php://input'));
 
-            $param = [":idperiodo" => $idperiodo];
-            $carreras = Carrera::findCarreraIdPeriodo($param);
+            $idmatricula = Main::limpiar_cadena($data->idmatricula);
+            $idmatricula = Main::decryption($idmatricula);
+            
+            $param = [":idmatricula" => $idmatricula];
+            $resp = Matricula::findDatosMatricula($param);
 
-            view("estudiantemateria.index", ["periodos" => $periodos, "carreras" => $carreras]);
+            echo json_encode($resp);
         }
 
     }

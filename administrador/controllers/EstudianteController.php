@@ -43,7 +43,7 @@
                             <td class="text-center">'.$estadodatos.'</td>
                             <td class="text-center">'.$estadomatricula.'</td>
                             <td class="text-center">
-                                <button id="'.Main::encryption($row->idmatricula).'" type="submit" class="btn btn-primary btn-sm" onclick="verMaterias(this.id)"><i class="fas fa-eye"></i> Modificar Materias</button>
+                                <button id="'.Main::encryption($row->idmatricula).'" class="btn btn-primary btn-sm" onclick="verMaterias(this.id)"><i class="fas fa-eye"></i> Modificar Materias</button>
                             </td>
                         </tr>';    
             }
