@@ -9,9 +9,11 @@
 
          $idperiodo = Main::limpiar_cadena($data->idperiodo);
          $idcarrera = Main::limpiar_cadena($data->idcarrera);
+         $idmatricula = Main::limpiar_cadena($data->idmatricula);
 
          $idperiodo = Main::decryption($idperiodo);
          $idcarrera = Main::decryption($idcarrera);
+         $idmatricula = Main::decryption($idmatricula);
 
          $param = [":idperiodo" => $idperiodo, ":idcarrera" => $idcarrera];
          $resp = Materia::findMateriaIdCarrera($param);
@@ -30,11 +32,19 @@
          $tbody = '';
 
          foreach($resp as $row){
+            $param = [":idmatricula" => $idmatricula, ":idmateria" => $row->idmateria];
+            $resp = Materia::findMateriaIdMatricula($param);
+            $cheked = (count($resp)>0)?'checked':'';
+
             $tbody .= '<tr>
                         <td class="text-center">'.$row->codigo.'</td>
                         <td>'.$row->materia.'</td>
                         <td class="text-center">'.$row->nivel.'</td>
-                        <td class="text-center">'.$row->idmateria.'</td>
+                        <td class="text-center">
+                           <div class="form-check form-switch">
+                              <input onchange="modificaMateria(&quot;'.Main::encryption($idmatricula) .'&quot;,&quot;'. Main::encryption($row->idmateria).'&quot;);" class="form-check-input" type="checkbox" role="switch" '.$cheked.'>
+                           </div>
+                        </td>
                      </tr>';
          }
 

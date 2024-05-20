@@ -36,6 +36,39 @@
             return $prepare->fetchAll(PDO::FETCH_CLASS, Matricula::class);
         }
 
+        public static function validaMateriaIdMatricula($params)
+        {
+            $db = new DB();
+
+            $prepare = $db->prepare("SELECT * FROM tb_detalle_matricula
+                                    WHERE idmatricula = :idmatricula
+                                    AND idmateria = :idmateria");
+            $prepare->execute($params);
+
+            return $prepare->fetchAll(PDO::FETCH_CLASS, Matricula::class);
+        }
+
+        public static function agregaMateriaIdMatricula($params)
+        {
+            $db = new DB();
+
+            $prepare = $db->prepare("INSERT INTO tb_detalle_matricula(idmatricula, idmateria)
+                                    VALUES(:idmatricula, :idmateria);");
+            
+            return $prepare->execute($params);
+        }
+
+        public static function eliminaMateriaIdMatricula($params)
+        {
+            $db = new DB();
+
+            $prepare = $db->prepare("DELETE FROM tb_detalle_matricula
+                                    WHERE idmatricula = :idmatricula
+                                    AND idmateria = :idmateria;");
+            
+            return $prepare->execute($params);
+        }
+
     }
 
 ?>

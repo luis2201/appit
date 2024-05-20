@@ -18,6 +18,17 @@
             return $prepare->fetchAll(PDO::FETCH_CLASS, Materia::class);
         }
 
+        public static function findMateriaIdMatricula($params)
+        {
+            $db = new DB();
+
+            $prepare = $db->prepare("SELECT * FROM tb_detalle_matricula 
+                                    WHERE idmatricula = :idmatricula
+                                    AND idmateria = :idmateria");
+            $prepare->execute($params);
+
+            return $prepare->fetchAll(PDO::FETCH_CLASS, Materia::class);
+        }
     }
 
 ?>

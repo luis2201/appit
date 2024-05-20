@@ -42,6 +42,16 @@
                         <a class="collapse-item" href="estudiantemateria">Agregar/Eliminar materia</a>
                     </div>
                 </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#materias" aria-expanded="true" aria-controls="materias" style="padding: 0.5em 1em;">
+                    <i class="fa fa-id-card-o" aria-hidden="true"></i>
+                    <span>Materias</span>
+                </a>
+                <div id="materias" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Materias:</h6>
+                        <a class="collapse-item" href="agregarestudiantemateria">Estudiante a Materia</a>
+                    </div>
+                </div>
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#matricula" aria-expanded="true" aria-controls="matricula" style="padding: 0.5em 1em;">
                     <i class="fa fa-id-card-o" aria-hidden="true"></i>
                     <span>Matrícula</span>

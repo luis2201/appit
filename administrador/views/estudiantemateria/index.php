@@ -93,7 +93,7 @@
               <input type="text" name="nombreestudiante" id="nombreestudiante" class="form-control" disabled>
           </div>
         </div>
-        <div class="row p-2">
+        <div class="row">
           <div class="col-md-10">
             <label for="carrera">Carrera</label>            
             <input type="text" name="carrera" id="carrera" class="form-control" value="<?php echo $row->carrera; ?>" disabled>
@@ -117,7 +117,7 @@
 <?php include_once './views/layout/footer.php' ?>
 <!--    Scripts -->
 <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-<script src="<?php echo DIR; ?>functions/estudiante-materia.js?v=1.1.6"></script>
+<script src="<?php echo DIR; ?>functions/estudiante-materia.js?v=1.2.0"></script>
 </body>
 
 </html>

@@ -119,7 +119,7 @@ btnMostrar.addEventListener("click", async function () {
     });
 });
 
-async function verMaterias(idmatricula)
+async function verDatos(idmatricula)
 {    
     await axios.post(DIR + 'matricula/finddatosmatricula', {
         idmatricula
@@ -133,7 +133,7 @@ async function verMaterias(idmatricula)
         document.getElementById("carrera").value = info.carrera;
         document.getElementById("nivel").value = info.nivel;        
 
-        cargaMaterias();
+        cargaMaterias(idmatricula);
 
         modalMaterias.show();        
     })
@@ -155,19 +155,77 @@ async function verMaterias(idmatricula)
     });
 }
 
-async function cargaMaterias()
+async function cargaMaterias(idmatricula)
 {
     idperiodo = document.getElementById("cmbidperiodo").value;
     idcarrera = document.getElementById("idcarrera").value;
 
     await axios.post(DIR + 'materia/findmateriaidcarrera', {
         idperiodo,
-        idcarrera
+        idcarrera,
+        idmatricula
     })
     .then(function (res) {
         let table = res.data;
 
         document.getElementById("tbMaterias").innerHTML = table;
+    })
+    .catch(function (error) {
+        console.log(error);
+        $.confirm({
+            title: 'Acceso no autorizado',
+            icon: 'fa fa-exclamation-triangle',
+            content: error.data,
+            theme: 'modern',
+            type: 'red',
+            typeAnimated: true,
+            buttons: {
+                aceptar: function () {
+
+                }
+            }
+        });
+    });
+}
+
+async function modificaMateria(idmatricula, idmateria)
+{
+    await axios.post(DIR + 'matricula/editmateriaidmatricula', {
+        idmatricula,
+        idmateria
+    })
+    .then(function (res) {
+        let info = res.data;
+
+        if(info){
+            $.confirm({
+                title: 'Acceso no autorizado',
+                icon: 'fa fa-thumbs-up',
+                content: 'Acción ejecutada satisfactoriamente',
+                theme: 'modern',
+                type: 'blue',
+                typeAnimated: true,
+                buttons: {
+                    aceptar: function () {
+    
+                    }
+                }
+            });
+        } else {
+            $.confirm({
+                title: 'Información del Sistema',
+                icon: 'fa fa-exclamation-triangle',
+                content: 'No es posible realizar la acción solicitada',
+                theme: 'modern',
+                type: 'orange',
+                typeAnimated: true,
+                buttons: {
+                    aceptar: function () {
+    
+                    }
+                }
+            });
+        }
     })
     .catch(function (error) {
         console.log(error);
