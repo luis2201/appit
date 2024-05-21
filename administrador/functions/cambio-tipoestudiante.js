@@ -261,7 +261,7 @@ async function validacionEstado(id)
     estado = 0;
   }
 
-  await axios.post('https://appit.itsup.edu.ec/administrador/cambiotipoestudiante/estadovalidacion/',{
+  await axios.post(DIR + 'cambiotipoestudiante/estadovalidacion/',{
     idestudiante,
     estado
   })
@@ -308,7 +308,7 @@ async function introductorioEstado(id)
       estado = 0;
   }
 
-  await axios.post('https://appit.itsup.edu.ec/administrador/cambiotipoestudiante/estadointroductorio/',{
+  await axios.post(DIR + 'cambiotipoestudiante/estadointroductorio/',{
     idestudiante,
     estado
   })

@@ -3,6 +3,27 @@
    class MateriaController
    {
 
+      public function findmateriasidcarrera()
+      {
+         $data = json_decode(file_get_contents('php://input'));
+
+         $idperiodo = Main::limpiar_cadena($data->idperiodo);
+         $idcarrera = Main::limpiar_cadena($data->idcarrera);
+
+         $idperiodo = Main::decryption($idperiodo);
+         $idcarrera = Main::decryption($idcarrera);
+
+         $param = [":idperiodo" => $idperiodo, ":idcarrera" => $idcarrera];
+         $resp = Materia::findMateriaIdCarrera($param);
+
+         $options = '<option value="">-- Seleccione Materia --</option>';
+         foreach($resp as $row){
+            $options .= '<option value="'.Main::encryption($row->idmateria).'">( '.$row->codigo.' ) '. $row->materia .'</option>';
+         }
+
+         echo json_encode($options);
+      }
+      
       public function findmateriaidcarrera()
       {
          $data = json_decode(file_get_contents("php://input"));

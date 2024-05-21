@@ -42,7 +42,7 @@ btnUpdateDatos.addEventListener("click", async function(){
         return;
     }
 
-    await axios.post('https://appit.itsup.edu.ec/administrador/cedulacorreoestudiante/updatedatos/',{
+    await axios.post(DIR + 'cedulacorreoestudiante/updatedatos/',{
         idestudiante,
         numero_identificacion,
         correo_electronico

@@ -38,4 +38,20 @@
             echo json_encode($resp);
         }
 
+        public function agregamateriaidmatricula()
+        {
+            $data = json_decode(file_get_contents('php://input'));
+
+            $idmateria = Main::limpiar_cadena($data->idmateria);
+            $idmatricula = Main::limpiar_cadena($data->idmatricula);
+            
+            $idmateria = Main::decryption($idmateria);
+            $idmatricula = Main::decryption($idmatricula);
+            
+            $param = [":idmatricula" => $idmatricula, ":idmateria" => $idmateria];
+            $resp = Matricula::agregaMateriaIdMatricula($param);
+
+            echo json_encode($resp);
+        }
+
     }

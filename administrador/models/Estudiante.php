@@ -41,6 +41,25 @@
             
             return $prepare->execute($params);
         }
+
+        public static function findEstudiantesIdMateria($params)
+        {
+            $db = new DB();
+
+            $prepare = $db->prepare("SELECT iddetalle_matricula, M.numero_matricula, E.numero_identificacion, CONCAT(E.apellido1, ' ', E.apellido2, ' ', E.nombre1, ' ', E.nombre2)AS estudiante
+                                    FROM tb_detalle_matricula D
+                                        INNER JOIN tb_matricula M ON D.idmatricula = M.idmatricula
+                                        INNER JOIN tb_estudiante E ON M.idestudiante = E.idestudiante
+                                    WHERE M.idperiodo = :idperiodo
+                                    AND D.idmateria = :idmateria
+                                    AND E.validacion = 0
+                                    AND E.introductorio = 0
+                                    AND M.estado = 1
+                                    ORDER BY E.apellido1, E.apellido2, E.nombre1, E.nombre2;");
+            $prepare->execute($params);
+
+            return $prepare->fetchAll(PDO::FETCH_CLASS, Estudiante::class);
+        }
     }
 
 ?>

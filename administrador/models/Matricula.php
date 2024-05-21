@@ -21,6 +21,24 @@
             return $prepare->fetchAll(PDO::FETCH_CLASS, Matricula::class);
         }
 
+        public static function findEstudiantesLista($params)
+        {
+            $db = new DB();
+
+            $prepare = $db->prepare("SELECT M.idmatricula, M.numero_matricula, E.numero_identificacion, CONCAT(E.apellido1, ' ', E.apellido2, ' ', E.nombre1, ' ', E.nombre2)estudiantes
+                                    FROM tb_matricula M
+                                        INNER JOIN tb_estudiante E ON M.idestudiante = E.idestudiante
+                                    WHERE M.idperiodo = :idperiodo
+                                    AND M.idcarrera = :idcarrera
+                                    AND M.idnivel = :idnivel
+                                    AND E.validacion = 0
+                                    AND E.introductorio = 0
+                                    ORDER BY E.apellido1, E.apellido2, E.nombre1, E.nombre2");
+            $prepare->execute($params);
+
+            return $prepare->fetchAll(PDO::FETCH_CLASS, Matricula::class);
+        }
+
         public static function findDatosMatricula($params)
         {
             $db = new DB();
