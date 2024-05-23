@@ -23,7 +23,7 @@
                                     <?php 
                                         $param = [":idperiodo" => $idperiodo];
                                         $res = Dashboard::matriculados($param); 
-                                        echo count($res)-1;
+                                        echo count($res);
                                     ?>
                                 </a>
                             </div>
@@ -49,9 +49,7 @@
                                 <a href="solicitudmatricula" class="text-warning" style="text-decoration: none">
                                     <?php 
                                         $res = Dashboard::matriculasPorAprobar($idperiodo); 
-                                        foreach($res as $row):
-                                            $pendientes = Dashboard::contarPendientes($row->idmatricula);
-                                        endforeach;
+                                        echo count($res);
                                     ?>
                                 </a>
                             </div>
@@ -208,7 +206,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Tecnología Superior en Emergencias Médicas (Ajuste Curricular)
+                                Tecnología Superior en Emergencias Médicas
                             </div>
                             <div id="nummpormatricular" class="h5 mb-0 font-weight-bold text-gray-800 text-danger">
                                 <a href="solicitudmatricula" class="text-danger" style="text-decoration: none">
@@ -228,19 +226,19 @@
                 </div>
             </div>
         </div>
-         <!-- Tecnología Superior en Emergencias Médicas (Malla 2019) -->
+         <!-- Tecnología Superior Universitaria en Educación Inclusiva -->
          <div class="col-xl-3 col-md-6 mb-1">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Tecnología Superior en Emergencias Médicas (Malla 2019)
+                                Tecnología Superior Universitaria en Educación Inclusiva
                             </div>
                             <div id="nummpormatricular" class="h5 mb-0 font-weight-bold text-gray-800 text-danger">
                                 <a href="solicitudmatricula" class="text-danger" style="text-decoration: none">
                                     <?php 
-                                        $param = [":idperiodo" => $idperiodo, ":idcarrera" => 39];
+                                        $param = [":idperiodo" => $idperiodo, ":idcarrera" => 41];
                                         $res = Dashboard::matriculadosCarrera($param);                                
                                         echo count($res);
                                     ?>
@@ -262,7 +260,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Tecnología Superior Universitaria en Rehabilitación Física (Nuevo Ajuste)
+                                Tecnología Superior Universitaria en Rehabilitación Física
                             </div>
                             <div id="nummpormatricular" class="h5 mb-0 font-weight-bold text-gray-800 text-danger">
                                 <a href="solicitudmatricula" class="text-danger" style="text-decoration: none">
@@ -282,19 +280,19 @@
                 </div>
             </div>
         </div>
-        <!-- Tecnología Superior en Rehabilitación Física (Malla 2020) -->
+        <!-- Tecnología Superior en Turismo -->
         <div class="col-xl-3 col-md-6 mb-1">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Tecnología Superior en Rehabilitación Física (Malla 2020)
+                                Tecnología Superior en Turismo
                             </div>
                             <div id="nummpormatricular" class="h5 mb-0 font-weight-bold text-gray-800 text-danger">
                                 <a href="solicitudmatricula" class="text-danger" style="text-decoration: none">
                                     <?php 
-                                        $param = [":idperiodo" => $idperiodo, ":idcarrera" => 40];
+                                        $param = [":idperiodo" => $idperiodo, ":idcarrera" => 9];
                                         $res = Dashboard::matriculadosCarrera($param);                                
                                         echo count($res);
                                     ?>
@@ -309,7 +307,7 @@
                 </div>
             </div>
         </div>
-        <!-- Tecnología Superior en Rehabilitación Física (Malla 2020) -->
+        <!-- Tecnología Superior Universitaria en Administración de Sistema de Salud -->
         <div class="col-xl-3 col-md-6 mb-1">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
@@ -322,6 +320,33 @@
                                 <a href="solicitudmatricula" class="text-danger" style="text-decoration: none">
                                     <?php 
                                         $param = [":idperiodo" => $idperiodo, ":idcarrera" => 48];
+                                        $res = Dashboard::matriculadosCarrera($param);                                
+                                        echo count($res);
+                                    ?>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            <i class="fa fa-list-ol fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Tecnología Superior Universitaria en Electrónica -->
+        <div class="col-xl-3 col-md-6 mb-1">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Tecnología Superior Universitaria en Electrónica
+                            </div>
+                            <div id="nummpormatricular" class="h5 mb-0 font-weight-bold text-gray-800 text-danger">
+                                <a href="solicitudmatricula" class="text-danger" style="text-decoration: none">
+                                    <?php 
+                                        $param = [":idperiodo" => $idperiodo, ":idcarrera" => 50];
                                         $res = Dashboard::matriculadosCarrera($param);                                
                                         echo count($res);
                                     ?>

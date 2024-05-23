@@ -21,7 +21,7 @@
       return $prepare->fetchAll(PDO::FETCH_CLASS, Dashboard::class);
     }
 
-    public static function contarPendientes($idmatricula)
+    public static function contarPendientes($idperiodo)
     {
       $db = new DB();
       $prepare = $db->prepare("SELECT count(*) FROM tb_matricula M WHERE M.idperiodo = :idperiodo AND M.estado = 0");
@@ -62,7 +62,6 @@
                                 INNER JOIN tb_estudiante E ON M.idestudiante = E.idestudiante
                               WHERE idperiodo = :idperiodo
                               AND E.introductorio = 0
-                              AND E.validacion = 0
                               AND M.estado = 1");
 
       $prepare->execute($params);

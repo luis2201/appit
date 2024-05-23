@@ -36,6 +36,10 @@
                 $file = explode('.', $row->doc_titulo);
                 $titulo_doc = $file[0];
                 $titulo_ext = $file[1];
+                
+                $file = explode('.', $row->foto);
+                $foto_doc = $file[0];
+                $foto_ext = $file[1];
 
                 $rows .= '<tr>
                             <td class="text-center">'.$i++.'</td>
@@ -46,6 +50,7 @@
                             <td class="text-center">'.$row->numero_celular.'</td>
                             <td class="text-center"><a class="btn btn-success" href="'.DIR.'documento.php?img='.$cedula_doc.'&ext='.$cedula_ext.'" target="_blank"><i class="fa fa-address-card text-light"></i></a></td>
                             <td class="text-center"><a class="btn btn-success" href="'.DIR.'documento.php?img='.$titulo_doc.'&ext='.$titulo_ext.'" target="_blank"><i class="fa fa-address-card text-light"></i></a></td>
+                            <td class="text-center"><a class="btn btn-success" href="'.DIR.'documento.php?img='.$foto_doc.'&ext='.$foto_ext.'" target="_blank"><i class="fa fa-address-card text-light"></i></a></td>
                           </tr>';
             }
 

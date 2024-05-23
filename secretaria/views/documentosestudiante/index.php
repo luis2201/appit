@@ -65,7 +65,7 @@
             </select>
           </div>
           <div class="col-md-4 mt-3">
-            <button id="btnMostrar" type="button" class="btn btn-primary btn-sm btn-block mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye" aria-hidden="true"></i> Mostrar Lista</button>
+            <button id="btnMostrar" type="button" class="btn btn-primary btn-sm btn-block mt-3"><i class="fa fa-eye" aria-hidden="true"></i> Mostrar Lista</button>
           </div>
         </div>
       </div>
@@ -84,6 +84,7 @@
                 <td scope="col" class="text-center">CELULAR</th>
                 <td scope="col" class="text-center">DOC CEDULA</th>
                 <td scope="col" class="text-center">DOC TITULO</th>
+                <td scope="col" class="text-center">FOTO</th>
               </tr>
             </thead>
             <tbody>
