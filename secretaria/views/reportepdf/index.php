@@ -70,7 +70,7 @@
             <center><h1>C E R T I F I C A</h1></center>
             
             <p align="justify" style="font-size:12">Que el (la) estudiante, <?php echo $row->estudiante ?>, con cédula de ciudadanía número <?php echo $row->numero_identificacion ?>, 
-            estudiante de la Carrera: <?php echo $row->carrera ?>, previo al cumplimiento de los requisitos legales, se encuentra legalmente matriculado en el <?php echo $row->nivel. ' Semestre'; ?>, Período Académico <?php echo $row->alias ?>, con el número de matrícula <?php echo $row->idmatricula ?>.
+            estudiante de la Carrera: <?php echo $row->carrera ?>, previo al cumplimiento de los requisitos legales, se encuentra legalmente matriculado en el <?php echo $row->nivel. ' Semestre'; ?>, Período Académico <?php echo $row->alias ?>, con el número de matrícula <?php echo ($row->idperiodo == 21)?$row->numero_matricula:$row->idmatricula; ?>.
             </p>
     <?php endforeach; ?>
             <p class="text-justify mt-5" style="font-size:12">El detalle de las asignaturas inscritas es el siguiente:</p>

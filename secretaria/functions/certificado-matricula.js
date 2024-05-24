@@ -23,7 +23,7 @@ cmbIdPeriodo.addEventListener("change", async function(){
   let idperiodo = cmbIdPeriodo.value;
   
   if(cmbIdPeriodo.value != "") {
-    await axios.get('https://appit.itsup.edu.ec/secretaria/carrera/findcarreraperiodo/' + idperiodo )
+    await axios.get(DIR + 'carrera/findcarreraperiodo/' + idperiodo )
     .then(function (res){
       let info = res.data;
             
@@ -90,7 +90,7 @@ cmbIdCarrera.addEventListener("change", async function(){
     let idperiodo = document.getElementById("cmbidperiodo").value;     
     let idcarrera = this.value;
     
-    await axios.post('https://appit.itsup.edu.ec/secretaria/modalidad/findmodalidadcarrera/', {
+    await axios.post(DIR + 'modalidad/findmodalidadcarrera/', {
       idperiodo,
       idcarrera
     })
@@ -138,7 +138,7 @@ cmbModalidad.addEventListener("change", async function(){
     let idcarrera = document.getElementById("idcarrera").value;     
     let modalidad = this.value;
     
-    await axios.post('https://appit.itsup.edu.ec/secretaria/nivel/findnivelcarreramodalidad/', {
+    await axios.post(DIR + 'nivel/findnivelcarreramodalidad/', {
       idperiodo,
       idcarrera,      
       modalidad
@@ -171,7 +171,7 @@ var btnMostrar = document.getElementById("btnMostrar");
 btnMostrar.addEventListener("click", async function(){
   if(!validate()){
     $.confirm({
-      title: 'Record Académico',
+      title: 'Certificado Matrícula',
       icon: 'fa fa-exclamation-triangle',
       content: 'Los campos marcados con rojo son obligatorios.',
       theme: 'modern',
@@ -196,7 +196,7 @@ btnMostrar.addEventListener("click", async function(){
   const tbody = document.querySelector('#tbLista tbody');
   tbody.innerHTML = '';
 
-  await axios.post('https://appit.itsup.edu.ec/secretaria/certificadomatricula/viewlistas', {
+  await axios.post(DIR + 'certificadomatricula/viewlistas', {
     idperiodo,
     idcarrera,    
     modalidad,

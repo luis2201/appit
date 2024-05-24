@@ -7,11 +7,9 @@ cmbIdPeriodo.addEventListener("change", async function(){
         idperiodo
     })
     .then(function (res){
-        let options = res.data;
+        let table = res.data;
        
-        'use strict';
-        const tbody = document.querySelector('#tbLista tbody');
-        tbody.innerHTML = options;
+        document.getElementById("tabla").innerHTML = table;
     })
     .catch(function (ex){
         console.log(ex)

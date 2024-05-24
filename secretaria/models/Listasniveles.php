@@ -15,7 +15,7 @@
     public static function viewlistas($idperiodo, $idcarrera, $modalidad, $idnivel)
     {
       $db = new DB();
-      $prepare = $db->prepare("SELECT M.idmatricula, CONCAT(E.apellido1, space(1), E.apellido2, space(1), E.nombre1, space(1), E.nombre2)AS alumnos, E.numero_identificacion, E.fecha_nacimiento, E.tipo_sangre, E.numero_celular, E.doc_cedula, E.doc_titulo
+      $prepare = $db->prepare("SELECT M.idmatricula, M.numero_matricula, CONCAT(E.apellido1, space(1), E.apellido2, space(1), E.nombre1, space(1), E.nombre2)AS alumnos, E.numero_identificacion, E.fecha_nacimiento, E.tipo_sangre, E.numero_celular, E.doc_cedula, E.doc_titulo
                                   FROM tb_matricula M
                                   INNER JOIN tb_estudiante E ON M.idestudiante=E.idestudiante
                               WHERE M.idperiodo = :idperiodo

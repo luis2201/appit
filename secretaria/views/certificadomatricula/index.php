@@ -98,7 +98,8 @@
 </div>
 
 <?php include_once './views/layout/footer.php' ?>
-<script src="<?php echo DIR; ?>functions/certificado-matricula.js?v=2.0"></script>
+<script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
+<script src="<?php echo DIR; ?>functions/certificado-matricula.js?v=2.0.1"></script>
 
 </body>
 
