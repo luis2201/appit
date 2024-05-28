@@ -51,8 +51,8 @@
                     </td>
                     <td scope="col" class="text-center">
                       <div class="btn-group" role="group" aria-label="Documentos">
-                        <a class="btn btn-circle btn-sm btn-info" title="Visualizar documento de Identificación" href="<?php echo DIR; ?>documento.php?img=<?php echo $row->doc_cedula; ?>" target="_blak"><i class="fa fa-address-card text-light"></i></a>
-                        <a class="btn btn-circle btn-sm btn-info" title="Visualizar Título e Bachiller" href="<?php echo DIR; ?>documento.php?img=<?php echo $row->doc_titulo; ?>" target="_blank"><i class="fa fa-file text-light" aria-hidden="true"></i></a>
+                        <a class="btn btn-circle btn-sm btn-info" title="Visualizar documento de Identificación" href="<?php echo DIR; ?>documentos.php?img=<?php echo $row->doc_cedula; ?>" target="_blak"><i class="fa fa-address-card text-light"></i></a>
+                        <a class="btn btn-circle btn-sm btn-info" title="Visualizar Título e Bachiller" href="<?php echo DIR; ?>documentos.php?img=<?php echo $row->doc_titulo; ?>" target="_blank"><i class="fa fa-file text-light" aria-hidden="true"></i></a>
                         <button id="btnInconsistencia" class="btn btn-circle btn-sm btn-dark" title="Inconsistencia de datos" value="<?php echo $row->numero_identificacion; ?>" onclick="inconsistencia(this.value);"><i class="fa fa-exclamation" aria-hidden="true"></i></button>
                       </div>
                     </td>
