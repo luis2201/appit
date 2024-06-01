@@ -33,8 +33,8 @@ idcarrera.addEventListener("change", async function () {
     });
 });
 
-var idnivel = document.getElementById("modalidad");
-idnivel.addEventListener("change", async function () {
+var modalidad = document.getElementById("modalidad");
+modalidad.addEventListener("change", async function () {
     let idcarrera = document.getElementById("idcarrera").value;
     let modalidad = this.value;
 
