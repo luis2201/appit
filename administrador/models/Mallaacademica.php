@@ -18,4 +18,13 @@
             return $prepare->fetchAll(PDO::FETCH_CLASS, Mallaacademica::class);
         }
 
+        public static function agregaMateriaMalla($params)
+        {
+            $db = new DB();
+
+            $prepare = $db->prepare("INSERT INTO tb_malla(idperiodo, idcarrera, idnivel, idmateria) VALUES(:idperiodo, :idcarrera, :idnivel, :idmateria)");
+            
+            return $prepare->execute($params);
+        }
+
     }

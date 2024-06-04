@@ -94,7 +94,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col">
-                        <input type="text" id="idmateria" name="idmateria">
+                        <input type="hidden" id="idmateria" name="idmateria">
                         <table id="tbConcatenadas" class="table table-condensed table-hover" style="width: 100%;">
                             <thead>
                                 <tr>
