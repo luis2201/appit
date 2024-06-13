@@ -19,7 +19,7 @@ btnMostrar.addEventListener("click", async function(){
     const tbody = document.querySelector('#tbLista tbody');
     tbody.innerHTML = '';
     
-    await axios.post('https://appit.itsup.edu.ec/ceie/validar/findsolicitud/',
+    await axios.post(DIR + 'validar/findsolicitud/',
     {
         idperiodo,
         idmodulo
@@ -49,7 +49,7 @@ async function aprobar(idceie)
     const tbody = document.querySelector('#tbLista tbody');
     tbody.innerHTML = '';
 
-    await axios.post('https://appit.itsup.edu.ec/ceie/validar/aprobar/', {
+    await axios.post(DIR + 'validar/aprobar/', {
         idceie,
         idperiodo,
         idmodulo
@@ -79,7 +79,7 @@ async function eliminar(idceie)
     const tbody = document.querySelector('#tbLista tbody');
     tbody.innerHTML = '';
 
-    await axios.post('https://appit.itsup.edu.ec/ceie/validar/eliminar/', {
+    await axios.post(DIR + 'validar/eliminar/', {
         idceie,
         idperiodo,
         idmodulo

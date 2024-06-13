@@ -29,7 +29,7 @@
                               <option value="">-- Seleccione un Periodo --</option>
                               <?php 
                                 foreach($periodos as $row): 
-                                  if ($row->idperiodo == 6 || $row->idperiodo == 13 || $row->idperiodo == 12 || $row->idperiodo == 17) {
+                                  if ($row->idperiodo == 6 || $row->idperiodo == 13 || $row->idperiodo == 12 || $row->idperiodo == 17 || $row->idperiodo == 21) {
                               ?>
                                 <option value="<?php echo Main::encryption($row->idperiodo); ?>"><?php echo $row->periodo; ?></option>
                               <?php } endforeach; ?>
@@ -75,7 +75,8 @@
         </div>
 
   <?php include_once './views/layout/footer.php' ?>
-  <script src="<?php echo DIR; ?>functions/validar.js"></script>
+  <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
+  <script src="<?php echo DIR; ?>functions/validar.js?v=1.0.1"></script>
 </body>
 
 </html>
