@@ -17,7 +17,7 @@ cmbIdCarrera.addEventListener("change", async function(){
   var idcarrera = document.getElementById("idcarrera").value;
 
   if(cmbIdCarrera.value != "") {
-    await axios.post('https://appit.itsup.edu.ec/docente/docente/findprofesorcarrera/', {
+    await axios.post(DIR + 'docente/findprofesorcarrera/', {
       idperiodo, 
       idcarrera
     })
@@ -57,7 +57,7 @@ cmbIdDocente.addEventListener("change", async function(){
   docente = this.options[selectedIndex].text;
     
   if(cmbIdDocente.value != "") {
-    await axios.post('https://appit.itsup.edu.ec/docente/materia/finddocentematerias/', {
+    await axios.post(DIR + 'materia/finddocentematerias/', {
       idperiodo, 
       idcarrera,
       iddocente
@@ -108,7 +108,7 @@ form.addEventListener('submit', async function (e)
   let idperiodo = document.getElementById('idperiodo').value;
   let idmateria = document.getElementById('idmateria').value;
 
-  await axios.post('https://appit.itsup.edu.ec/docente/asistenciadocente/viewlistaestudiantes', {
+  await axios.post(DIR + 'asistenciadocente/viewlistaestudiantes', {
     idperiodo,
     idmateria
   })

@@ -69,7 +69,7 @@
 <!--    Scripts -->
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-<script src="<?php echo DIR; ?>functions/leccionario.js?v=1.0.3"></script>
+<script src="<?php echo DIR; ?>functions/leccionario.js?v=1.0.0"></script>
 </body>
 <style>
 

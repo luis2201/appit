@@ -80,7 +80,8 @@
 <?php include_once './views/layout/footer.php' ?>
 <!--    Scripts -->
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
-<script src="<?php echo DIR; ?>functions/asistencia-docente.js?v=1.0.8"></script>
+<script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
+<script src="<?php echo DIR; ?>functions/asistencia-docente.js?v=1.0.9"></script>
 </body>
 <style>
 
