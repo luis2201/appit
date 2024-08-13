@@ -62,6 +62,7 @@
 
 <?php include_once './views/layout/footer.php' ?>
 <!--    Scripts -->
+<script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
 <script src="<?php echo DIR; ?>functions/cambio-tipoestudiante.js?v=1.2.1"></script>
 </body>
 

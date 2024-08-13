@@ -173,7 +173,7 @@ async function seleccionar(idadmisiones)
     document.getElementById("estudiante").value = info.apellido1+' '+info.apellido2+' '+info.nombre1+' '+info.nombre2;
 
     let idadmisiones = document.getElementById("idadmisiones").value;
-    let idperiodo =  document.getElementById("idperiodo").value;
+    let idperiodo =  document.getElementById("txtidperiodo").value;
     
     res = await axios.post(DIR + 'pagoadmisiones/findpagoadmisiones/',{
       idadmisiones,
@@ -294,7 +294,7 @@ frmPago.addEventListener('submit', async function (e) {
     } else{
       const formData = new FormData(frmPago);
       formData.append('idadmisiones', document.getElementById('idadmisiones').value);
-      formData.append('idperiodo', document.getElementById('idperiodo').value);
+      formData.append('idperiodo', document.getElementById('txtidperiodo').value);
       formData.append('valorpagar', document.getElementById('valorpagar').value);
       formData.append('fechapago', document.getElementById('fechapago').value);
       formData.append('numerofactura', document.getElementById('numerofactura').value);

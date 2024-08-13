@@ -1,0 +1,1 @@
+var DIR = 'https://appit2.itsup.edu.ec/posgrado/';

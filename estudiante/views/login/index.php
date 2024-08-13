@@ -43,7 +43,7 @@
                                     <img src="img/logo_eco_itsup.png" width="25%">
                                     <h5 class="text-gray-900 mb-2" style="font-family: 'Fredoka One', cursive;">Aplicación Integrada ITSUP</h5>
                                     <span>Módulo del Estudiante</span>
-                                    <?php //echo Main::encryption('1313806042'); ?>
+                                    <?php //echo Main::decryption('NU4rZ01BZVdPZkNQc1hFMmV2R3o4QT09'); ?>
                                 </div>
                                 <form id="form" method="post" class="user">
                                     <div class="form-group">

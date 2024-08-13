@@ -7,7 +7,7 @@
                     </button>
 
                     <div class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <h6 id="periodo" class="text-danger">Aplicación Integrada ITSUP > POSTGRADO</h6>
+                        <h6 id="periodo" class="text-danger">Aplicación Integrada ITSUP > POSGRADO</h6>
                     </div>
 
                     <!-- Topbar Navbar -->

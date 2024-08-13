@@ -22,7 +22,7 @@ if(!file_exists("./controllers/".$controller."Controller.php")){
     $controller = "error";
 }
 
-if(!isset($_SESSION['idusuario_appit']) || $_SESSION['tipousuario_appit']!= 'POSTGRADO'){
+if(!isset($_SESSION['idusuario_appit']) || $_SESSION['tipousuario_appit']!= 'POSGRADO'){
     $controller = "login";
 }
 

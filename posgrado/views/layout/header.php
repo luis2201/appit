@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>APPIT 1.0 | Aplicación Integrada ITSUP > Secretaria Postgrado</title>
+    <title>APPIT 1.0 | Aplicación Integrada ITSUP > Secretaria Posgrado</title>
     
     <link rel="shortcut icon" href="<?php echo DIR; ?>img/appit_logo.png" type="image/x-icon">
 

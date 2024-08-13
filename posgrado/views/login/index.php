@@ -42,7 +42,7 @@
                                     <img src="img/appit_logo.png" width="25%">
                                     <img src="img/logo_eco_itsup.png" width="25%">
                                     <h5 class="text-gray-900 mb-2" style="font-family: 'Fredoka One', cursive;">Aplicación Integrada ITSUP</h5>
-                                    <span>Módulo Postgrado</span>
+                                    <span>Módulo Posgrado</span>
                                 </div>
                                 <form id="form" method="post" class="user">
                                     <div class="form-group">

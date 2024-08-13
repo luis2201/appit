@@ -31,7 +31,7 @@
                                     <select class="form-control" id="cmbidperiodo" name="cmbidperiodo">
                                         <?php 
                                             foreach ($periodos as $row):
-                                                if($row->idperiodo == 21){
+                                                if($row->idperiodo == 28){
                                         ?>
                                             <option value="<?php echo Main::encryption($row->idperiodo); ?>"><?php echo $row->periodo; ?></option>
                                         <?php } endforeach; ?>
@@ -43,7 +43,7 @@
                                         <option value="">-- Seleccione Carrera --</option>
                                         <?php 
                                             foreach ($carreras as $row):
-                                              if($row->idcarrera == 49 ||$row->idcarrera == 48 || $row->idcarrera == 41 || $row->idcarrera == 38 || $row->idcarrera == 37 || $row->idcarrera == 36 || $row->idcarrera == 4 || $row->idcarrera == 35){
+                                              if($row->idcarrera == 49 ||$row->idcarrera == 48 || $row->idcarrera == 41 || $row->idcarrera == 38 || $row->idcarrera == 36 || $row->idcarrera == 4 || $row->idcarrera == 50 || $row->idcarrera == 53 || $row->idcarrera == 54){
                                         ?>
                                             <option value="<?php echo Main::encryption($row->idcarrera); ?>"><?php echo $row->carrera; ?></option>
                                         <?php } endforeach; ?>

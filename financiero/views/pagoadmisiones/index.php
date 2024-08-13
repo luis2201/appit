@@ -26,6 +26,7 @@
     <div class="card-body">
       <form id="frmPago">
         <div class="card">
+          <input type="hidden" id="txtidperiodo" name="txtidperiodo" value="<?php echo Main::encryption(28) ?>">
           <input type="hidden" id="idadmisiones" name="idadmisiones" value="0">
           <div class="form-group col-12">
             <div class="row mb-1 mt-2">
@@ -182,7 +183,7 @@
 
 <?php include_once './views/layout/footer.php' ?>
 <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-<script src="<?php echo DIR; ?>functions/pago-admisiones.js?v=1.0.2"></script>
+<script src="<?php echo DIR; ?>functions/pago-admisiones.js?v=1.0.3"></script>
 </body>
 
 </html>
