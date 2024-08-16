@@ -98,7 +98,7 @@
 
     <!-- Custom script for sites -->
     <script src="functions/global.js?v=1.0.0"></script>
-    <script src="functions/login.js?v=1.2.3"></script>
+    <script src="functions/login.js?v=1.2.5"></script>
 
 </body>
 
