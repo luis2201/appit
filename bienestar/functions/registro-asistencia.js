@@ -87,13 +87,13 @@ btnMostrar.addEventListener('click', async function ()
 
 })
 
-async function justificar(idasistencia)
+async function justificar(idasistencia, valor)
 {
-  var idperiodo = document.getElementById("idperiodo").value;
-  var idcarrera = document.getElementById("idcarrera").value;  
-  var idmateria = document.getElementById("idmateria").value;
-  var fecha = document.getElementById("fecha").value;  
-
+  let idperiodo = document.getElementById("idperiodo").value;
+  let idcarrera = document.getElementById("idcarrera").value;  
+  let idmateria = document.getElementById("idmateria").value;
+  let fecha = document.getElementById("fecha").value;  
+  let observacion = (valor==1)?'JUSTIFICADA':'NO JUSTIFICADA';
   'use strict';
   const tbody = document.querySelector('#tbCuadro tbody');
   
@@ -102,11 +102,12 @@ async function justificar(idasistencia)
     idcarrera,
     idmateria,
     fecha,
-    idasistencia
+    observacion,
+    idasistencia,
   })
   .then(function (res){   
     let info = res.data;       
-        
+     console.log(res)
     tbody.innerHTML = info;
   })
   .catch(function (error){

@@ -23,7 +23,7 @@
       <div class="col-md-8 text-center" style="margin: auto;">
         <div class="card">
           <div class="card-header">
-            <h6 class="float-left">De: Admisiones</h6>
+            <h6 class="float-left">De: APPIT - Aplicativo Institucional ITSUP</h6>
             <h6 class="float-right">Fecha: <?php echo $row->fecha; ?></h6>
           </div>
           <div class="card-body text-justify">

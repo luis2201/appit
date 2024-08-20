@@ -49,7 +49,7 @@
         {
             $db = new DB();
 
-            $prepare = $db->prepare("call sp_asistencia_justificar(:idperiodo, :idmateria, :idasistencia, :fecha)");
+            $prepare = $db->prepare("call sp_asistencia_justificar(:idperiodo, :idmateria, :idasistencia, :fecha, :observacion)");
 
             return $prepare->execute($params);
         }

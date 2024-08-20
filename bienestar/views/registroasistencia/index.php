@@ -51,11 +51,11 @@
         <div class="row">                      
           <!-- Tabla de resultados -->
           <div class="col-10" style="margin:auto">                
-            <table id="tbCuadro" class="table table-stripped table-responsive" width="100%" cellspacing="0" cellpadding="0">
+            <table id="tbCuadro" class="table table-stripped table-responsive" cellspacing="0" cellpadding="0">
               <thead class="bg-primary text-light text-center">
                 <tr style="height: 1em; font-weight: bold;font-size: 0.7em;">
-                  <td scope="col" class="text-center align-middle" width="5%">#</td>
-                  <td scope="col" class="text-center align-middle verticalText"  width="10%">MAT. N°</td>
+                  <td scope="col" class="text-center align-middle">#</td>
+                  <td scope="col" class="text-center align-middle verticalText">MAT. N°</td>
                   <td scope="col" class="text-center align-middle">NOMINA</td>
                   <td scope="col" class="text-center align-middle">ASISTENCIA</td>
                   <td scope="col" class="text-center align-middle">OBSERVACION</td>
@@ -78,7 +78,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.js" integrity="sha512-sk0cNQsixYVuaLJRG0a/KRJo9KBkwTDqr+/V94YrifZ6qi8+OO3iJEoHi0LvcTVv1HaBbbIvpx+MCjOuLVnwKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-<script src="<?php echo DIR; ?>functions/registro-asistencia.js?v=1.0.1"></script>
+<script src="<?php echo DIR; ?>functions/registro-asistencia.js?v=1.0.9"></script>
 </body>
 <style>
 

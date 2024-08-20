@@ -40,7 +40,7 @@
                 <?php echo ($row->estado==0)?'<i class="fa fa-envelope text-primary" aria-hidden="true"></i>':'<i class="fa fa-envelope-open text-success" aria-hidden="true"></i>'; ?>
               </a>
             </th>
-            <th>Admisiones</th>
+            <th>APPIT - Aplicativo Institucional ITSUP</th>
             <th><?php echo $row->titulo; ?></th>
             <th class="text-center"><?php echo $row->fecha; ?></th>
           </tr>
