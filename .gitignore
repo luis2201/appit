@@ -42,7 +42,7 @@ ceie/.htaccess
 docente/config/
 docente/functions/global.js
 docente/models/DB.php
-docente/utils/
+#docente/utils/
 docente/.htaccess
 
 #Estudiante

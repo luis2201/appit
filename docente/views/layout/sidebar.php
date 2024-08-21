@@ -81,6 +81,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Calificaciones:</h6>
                         <a class="collapse-item" href="calificacionintroductorio">Registro de Calificaciones</a>
+                        <a class="collapse-item" href="resumenintroductorio">Resumen de Calificaciones</a>
                     </div>
                 </div>
             </li>
