@@ -95,7 +95,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 
     <!-- Custom script for sites -->
-    <script src="functions/login.js"></script>
+    <script src="functions/global.js?v=1.0.0"></script>
+    <script src="functions/login.js?v=1.0.1"></script>
 
 </body>
 

@@ -74,13 +74,13 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones de matrícula:</h6>
                         <a class="collapse-item" href="solicitudmatricula">Solicitar matrícula</a>
-                        <a class="collapse-item" href="historialmatricula">Historial de matrículas</a>
+                        <!-- <a class="collapse-item" href="historialmatricula">Historial de matrículas</a> -->
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAsistencia" aria-expanded="true" aria-controls="collapseAsistencia">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                     <span>Asistencia</span>
@@ -91,22 +91,22 @@
                         <a class="collapse-item" href="asistencia">Asistencia Parcial</a>
                     </div>
                 </div>
-            </li>
+            </li> -->
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            <!-- <div class="sidebar-heading">
                 Calificaciones
-            </div>
+            </div> -->
             
             <!-- Nav Item - Calificaciones -->
         <?php 
-            $params = [":idperiodo" => 6, ":idestudiante" => Main::decryption($_SESSION['idestudiante_appit'])];
-            $resp = Seccion::findSeccionIdEstudiante($params);
-            foreach ($resp as $row) {
-                $modalidad = $row->modalidad;
-                if($modalidad != 'Virtual'){
+            // $params = [":idperiodo" => 21, ":idestudiante" => Main::decryption($_SESSION['idestudiante_appit'])];
+            // $resp = Seccion::findSeccionIdEstudiante($params);
+            // foreach ($resp as $row) {
+            //     $modalidad = $row->modalidad;
+            //     if($modalidad != 'Virtual'){
         ?>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="notas">
                     <i class="fas fa-file-check"></i>
                     <span>Calificaciones Parciales</span>
@@ -115,19 +115,19 @@
                     <i class="fas fa-file-check"></i>
                     <span>Resumen del Periodo</span>
                 </a>
-            </li>
+            </li> -->
         <?php 
-                } else{
+                // } else{
         ?>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="resumenvirtual">
                     <i class="fas fa-file-check"></i>
                     <span>Resumen del Periodo</span>
                 </a>
-            </li>
+            </li> -->
         <?php
-                }
-            }
+            //     }
+            // }
         ?>
         </ul>
         <!-- End of Sidebar -->

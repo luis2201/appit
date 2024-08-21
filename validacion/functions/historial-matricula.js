@@ -1,7 +1,7 @@
 const idperiodo = document.getElementById("idperiodo").value;
 const idestudiante = document.getElementById("idestudiante").value;
 
-axios.post('https://appit.itsup.edu.ec/estudiante/historialmatricula/getmateriasidperiodo/', {
+axios.post(DIR + 'historialmatricula/getmateriasidperiodo/', {
     idperiodo, 
     idestudiante
 })

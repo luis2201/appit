@@ -36,7 +36,8 @@
         </div>
 
       <?php include_once './views/layout/footer.php'; ?>
-      <script src="<?php echo DIR; ?>functions/historial-matricula.js"></script>
+      <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
+      <script src="<?php echo DIR; ?>functions/historial-matricula.js?v=1.0.1"></script>
 </body>
 
 </html>

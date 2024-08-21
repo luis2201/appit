@@ -6,7 +6,7 @@ async function compruebaDatosPersonales()
 {
   const idestudiante = document.getElementById("idestudianteid").value;
 
-  await axios.get('https://appit.itsup.edu.ec/validacion/datospersonales/find/' + idestudiante)
+  await axios.get(DIR + 'datospersonales/find/' + idestudiante)
   .then(async function (res) {
     let info = res.data;
 
@@ -38,7 +38,7 @@ async function compruebaDatosPersonales()
 async function datosMatricula(){
   const idestudiante = document.getElementById("idestudiante").value;
 
-  await axios.get('https://appit.itsup.edu.ec/validacion/solicitudmatricula/findmatriculaidestudiante/' + idestudiante)
+  await axios.get(DIR + 'solicitudmatricula/findmatriculaidestudiante/' + idestudiante)
   .then(function (res) {
     let info = res.data[0];
 
@@ -66,7 +66,7 @@ async function buscaMatricula()
     idperiodo
   };
 
-  await axios.post('https://appit.itsup.edu.ec/validacion/solicitudmatricula/find', params)
+  await axios.post(DIR + 'solicitudmatricula/find', params)
   .then(async function (res) {
     let info = res.data[0];
 
@@ -80,7 +80,7 @@ async function buscaMatricula()
       document.getElementById("formulario").style.display = "block";
       document.getElementById("materias").style.display = "block";
 
-      const res = await axios.post('https://appit.itsup.edu.ec/validacion/carrera/findcarrera', params);
+      const res = await axios.post(DIR + 'carrera/findcarrera', params);
       info = res.data;
       
       idmatricula = info.idmatricula;
@@ -102,7 +102,7 @@ async function getMateriasAll(idperiodo, idcarrera)
     idcarrera
   }
 
-  await axios.post('https://appit.itsup.edu.ec/validacion/materia/find', params)
+  await axios.post(DIR + 'materia/find', params)
   .then(async function (response) {
     let materias = response.data;
     'use strict';
@@ -121,7 +121,7 @@ async function getMateriasAll(idperiodo, idcarrera)
         idmateria
       }
 
-      const res = await axios.post('https://appit.itsup.edu.ec/validacion/materia/finddetallematricula', params)
+      const res = await axios.post(DIR + 'materia/finddetallematricula', params)
       info = res.data[0];
       console.log(res.data.length)
       if(res.data.length == 0) {
@@ -152,7 +152,7 @@ async function agregaDetalleMatricula(idmateria)
     idmateria
   }
 
-  await axios.post('https://appit.itsup.edu.ec/validacion/detallematricula/insert', params)
+  await axios.post(DIR + 'detallematricula/insert', params)
   .then(function (response) {
     let materias = response.data;
 

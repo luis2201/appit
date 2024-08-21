@@ -65,7 +65,7 @@ form.addEventListener('submit', async function (e)
   formData.append('correo_electronico', document.getElementById('correo_electronico').value);
   formData.append('contrasena', document.getElementById('contrasena').value);
 
-  await axios.post('https://appit.itsup.edu.ec/validacion/login/validar/', formData)
+  await axios.post(DIR + 'login/validar/', formData)
   .then(function (res) {
     let info = res.data;
     window.location.href = "dashboard";

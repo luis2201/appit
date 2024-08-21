@@ -107,7 +107,7 @@ async function justificar(idasistencia, valor)
   })
   .then(function (res){   
     let info = res.data;       
-     console.log(res)
+
     tbody.innerHTML = info;
   })
   .catch(function (error){

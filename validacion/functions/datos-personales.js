@@ -3,7 +3,7 @@ init();
 async function init (){
   idestudiante = document.getElementById('idestudiante').value;
 
-  await axios.get('https://appit.itsup.edu.ec/validacion/datospersonales/find/'+idestudiante)
+  await axios.get(DIR + 'datospersonales/find/'+idestudiante)
   .then(function (res) {
     let info = res.data;
 
@@ -326,7 +326,7 @@ form.addEventListener('submit', async function (e) {
   formData.append('ingresos_hogar', document.getElementById('ingresos_hogar').value);
   formData.append('miembros_hogar', document.getElementById('miembros_hogar').value); 
 
-  await axios.post('https://appit.itsup.edu.ec/validacion/datospersonales/edit/', formData)
+  await axios.post(DIR + 'datospersonales/edit/', formData)
   .then(function (response){
     $.confirm({
       title: 'Datos del estudiante',

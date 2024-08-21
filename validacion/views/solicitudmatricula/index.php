@@ -26,7 +26,7 @@
                 </div>
                 <!-- Begin FormMatricula -->
                 <div id="formulario" class="card">
-                  <input type="hidden" id="idestudianteid" name=idestudianteid" value="<?php echo $_SESSION['idestudiantevali_appit']; ?>">
+                  <input type="hidden" id="idestudianteid" name="idestudianteid" value="<?php echo $_SESSION['idestudiantevali_appit']; ?>">
                   <div class="form-group col-12">
                     <div class="row mb-1">
                       <div class="col-md-4">
@@ -74,7 +74,8 @@
         </div>
 
   <?php include_once './views/layout/footer.php' ?>
-  <script src="<?php echo DIR; ?>functions/solicitud-matricula.js"></script>
+  <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
+  <script src="<?php echo DIR; ?>functions/solicitud-matricula.js?v=1.0.2"></script>
 </body>
 
 </html>

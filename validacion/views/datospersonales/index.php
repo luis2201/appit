@@ -359,8 +359,9 @@
 
     <?php include_once './views/layout/footer.php'; ?>
     <!-- Custom scripts for app -->
-    <script src="<?php DIR; ?>functions/main.js"></script>
-    <script src="<?php DIR; ?>functions/datos-personales.js"></script>
+    <script src="<?php DIR; ?>functions/main.js?v=1.0.0"></script>
+    <script src="<?php DIR; ?>functions/global.js?v=1.0.0"></script>
+    <script src="<?php DIR; ?>functions/datos-personales.js?v=1.0.1"></script>
 </body>
 
 </html>
