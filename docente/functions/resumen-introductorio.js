@@ -62,7 +62,7 @@ btnMostrar.addEventListener("click", async function (){
   let idperiodo = document.getElementById("idperiodo").value;
   let idmateria = document.getElementById("idmateria").value;  
 
-  window.open(DIR + 'resumenintroductorio/pdf', '_blank');
+  window.open(DIR + 'resumenintroductorio/pdf?p1='+idperiodo+'&p2='+idmateria, '_blank');
 });
 
 function validate()
