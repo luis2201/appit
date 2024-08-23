@@ -6,6 +6,11 @@
     <title>APPIT 1.0 | Aplicación Integrada ITSUP > Estudiante</title>
 </head>
 <body>
-    <?php print_r($params); ?>
+    <?php 
+        foreach($listaEstudiantes as´$row)
+        {
+            echo 'si';
+        }
+    ?>
 </body>
 </html>
