@@ -24,7 +24,7 @@
         public static function viewListaEstudianteMateria($params)
         {
             $db = new DB();            
-            $prepare = $db->prepare("SELECT M.idmatricula, CONCAT(E.apellido1, ' ', E.apellido2, ' ', E.nombre1, ' ', E.nombre2)AS estudiante
+            $prepare = $db->prepare("SELECT M.idmatricula, M.numero_matricula, CONCAT(E.apellido1, ' ', E.apellido2, ' ', E.nombre1, ' ', E.nombre2)AS estudiante
                                     FROM tb_matricula M 
                                     INNER JOIN tb_detalle_matricula_introductorio D ON M.idmatricula = D.idmatricula
                                     INNER JOIN tb_materia_introductorio T ON D.idmateria = T.idmateria
