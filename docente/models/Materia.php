@@ -69,6 +69,21 @@
 
             return $prepare->fetchAll(PDO::FETCH_CLASS, Materia::class);
         }
+
+        public static function findDatosDocenteMateria($params)
+        {
+            $db = new DB();
+
+            $prepare = $db->prepare("SELECT CONCAT(D.nombre1,' ', D.nombre2,' ', D.apellido1,' ', D.apellido2)AS docente, M.materia
+                                    FROM tb_carga_horaria_introductorio C
+                                        INNER JOIN tb_docente D ON C.iddocente = D.iddocente
+                                        INNER JOIN tb_materia_introductorio M ON C.idmateria_introductorio = M.idmateria
+                                    WHERE C.idperiodo = :idperiodo
+                                    AND C.idmateria_introductorio = :idmateria");
+            $prepare->execute($params);
+
+            return $prepare->fetchAll(PDO::FETCH_CLASS, Materia::class);
+        }
     }
 
 ?>
