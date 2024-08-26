@@ -20,7 +20,7 @@
             <td></td>
         </tr>
     </table>
-    <table id="tbCuadro" width="100%" cellspacing="0" cellpadding="0" style="font-size:0.95vw; margin-top:5px; border-style:solid; border-color:#000; border-width:1px; border-collapse:collapse">
+    <table id="tbCuadro" width="100%" cellspacing="0" cellpadding="0" style="font-size:0.95vw; margin-top:10px; border-style:solid; border-color:#000; border-width:1px; border-collapse:collapse">
         <thead>
             <tr style="height:20px; font-weight:bold;background-color:#0d6efd; color:#fff; text-align:center;">
                 <td scope="col">#</td>
@@ -51,23 +51,30 @@
                 <td style="width:3%; text-align:center;"><?php echo $i++; ?></td>
                 <td style="width:5%; text-align:center;"><?php echo $row->idmatricula; ?></td>
                 <td><?php echo $row->estudiante; ?></td>
-            <?php
-                // $param = [":idmatricula" => $row->idmatricula, ":idperiodo" => $idperiodo, ":idmateria" => $idmateria];
-                // $calificaciones = Calificacionintroductorio::findresumencalificacionidmatricula($param);
-                // if(count($calificaciones)>0){
-                //     foreach ($calificaciones as $cal) {               
-                //         $aporte = (!is_null($cal->aporte))?number_format($cal->aporte,2):number_format(0,2); 
-                //         $lecciones = (!is_null($cal->lecciones))?number_format($cal->lecciones,2):number_format(0,2); 
-                //         $tdocencia = (!is_null($cal->tdocencia))?number_format($cal->tdocencia,2):number_format(0,2); 
-                //         $practicas = (!is_null($cal->practica))?number_format($cal->practica,2):number_format(0,2); 
-                //         $tpracticas = (!is_null($cal->tpractica))?number_format($cal->tpractica,2):number_format(0,2); 
-                //         $aprendizaje = (!is_null($cal->aprendizaje))?number_format($cal->aprendizaje,2):number_format(0,2); 
-                //         $taprendizaje = (!is_null($cal->taprendizaje))?number_format($cal->taprendizaje,2):number_format(0,2); 
-                //         $resultados = (!is_null($cal->resultado))?number_format($cal->resultado,2):number_format(0,2); 
-                //         $tresultados = (!is_null($cal->tresultado))?number_format($cal->tresultado,2):number_format(0,2); 
-                //         $total = (!is_null($cal->total))?number_format($cal->total,2):number_format(0,2);                          
+                <?php
+                    $p1 = 0;
+                    $p2 = 0;
+
+                    $param = [":idmatricula" => $row->idmatricula, ":idmateria" => $idmateria, ":idparcial" => 1];                
+                    $calificaciones = Calificacionintroductorio::findresumencalificacionidmatricula($param);
                     
-            ?>
+                    foreach ($calificaciones as $cal1):
+                        $p1 = (!is_null($cal1->total))?number_format($cal1->total,2):number_format(0,2);
+                ?>            
+                    <td style="text-align:center;"><?php echo (!is_null($cal1->total))?number_format($cal1->total,2):number_format(0,2); ?></td>
+                <?php endforeach; ?>
+                <?php
+            
+                    $param = [":idmatricula" => $row->idmatricula, ":idmateria" => $idmateria, ":idparcial" => 2];                
+                    $calificaciones = Calificacionintroductorio::findresumencalificacionidmatricula($param);
+                    
+                    foreach ($calificaciones as $cal2):
+                        $p2 = (!is_null($cal2->total))?number_format($cal2->total,2):number_format(0,2);
+                ?>            
+                    <td style="text-align:center;"><?php echo (!is_null($cal2->total))?number_format($cal2->total,2):number_format(0,2); ?></td>
+                <?php endforeach; ?>
+                <td style="text-align:center;"><?php echo (!is_null($p1+$p2))?number_format($p1+$p2,2):number_format(0,2); ?></td>                
+                <td style="text-align:center;"><?php echo (($p1+$p2)>=70)?'APROBADO':'REPROBADO'; ?></td>                
             </tr>
             <?php endforeach; ?>
         </tbody>

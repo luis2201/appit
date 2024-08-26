@@ -58,6 +58,15 @@
             return $prepare->fetchAll(PDO::FETCH_CLASS, Calificacionintroductorio::class);
         }
 
+        public static function findresumencalificacionidmatricula($params)
+        {
+            $db = new DB();
+            $prepare = $db->prepare("SELECT * FROM tb_calificacion_introductorio WHERE idmatricula = :idmatricula AND idmateria = :idmateria AND idparcial = :idparcial;");
+            $prepare->execute($params);
+    
+            return $prepare->fetchAll(PDO::FETCH_CLASS, Calificacionintroductorio::class);
+        }
+
         public function insertCalificacion()
         {
             $params = [":idmatricula" => $this->idmatricula, ":idperiodo" => $this->idperiodo, ":idmateria" => $this->idmateria, ":idparcial" => $this->idparcial, ":aporte" => $this->aporte, ":lecciones" => $this->lecciones, ":tdocencia" => $this->tdocencia, ":practica" => $this->practica, ":tpractica" => $this->tpractica, ":aprendizaje" => $this->aprendizaje, ":taprendizaje" => $this->taprendizaje, ":resultado" => $this->resultado, ":tresultado" => $this->tresultado, ":total" => $this->total];
