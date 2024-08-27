@@ -24,7 +24,7 @@ const formattedDate = `${year}/${month}/${day}`;
 var dFecha = document.getElementById("fecha");
 dFecha.value = formattedDate;
 
-dFecha.disabled = true;
+// dFecha.disabled = true;
 dFecha.addEventListener("change", function(){
   document.getElementById("idmateria").value = "";
 

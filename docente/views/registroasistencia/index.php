@@ -123,7 +123,7 @@
 <!--    Scripts -->
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-<script src="<?php echo DIR; ?>functions/registro-asistencia.js?v=1.0.6"></script>
+<script src="<?php echo DIR; ?>functions/registro-asistencia.js?v=1.0.7"></script>
 </body>
 <style>
 
