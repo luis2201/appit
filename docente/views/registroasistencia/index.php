@@ -33,7 +33,7 @@
           <div class="row">
             <div class="col-md-2">
               <label for="fecha">Fecha</label>
-              <input type="text" id="fecha" name="fecha" class="form-control">
+              <input type="date" id="fecha" name="fecha" class="form-control">
             </div>
             <div class="col-md-10">
               <label for="idmateria">Materia</label>
@@ -123,7 +123,7 @@
 <!--    Scripts -->
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-<script src="<?php echo DIR; ?>functions/registro-asistencia.js?v=1.0.7"></script>
+<script src="<?php echo DIR; ?>functions/registro-asistencia.js?v=1.0.9"></script>
 </body>
 <style>
 
