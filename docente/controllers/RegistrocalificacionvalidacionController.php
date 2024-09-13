@@ -4,9 +4,9 @@
     {
         public function index()
         {
-            $periodost = Periodo::findTodos();
+            $periodos = Periodo::findTodos();
                         
-            view("registrocalificacionvalidacion.index",  ["periodost" => $periodost]);
+            view("registrocalificacionvalidacion.index",  ["periodos" => $periodos]);
         }        
 
         public function save()

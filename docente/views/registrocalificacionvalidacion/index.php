@@ -27,10 +27,10 @@
       <div class="form form-group">
         <div class="row">
           <div class="col-md-6">
-            <label for="cmbidperiodo">Periodo</label>
+            <label for="cmbidperiodo">Periodo</label>            
             <select name="cmbidperiodo" id="cmbidperiodo" class="form-select">
-              <option value="">-- Seleccione Periodo --</option>
-              <?php foreach($periodost as $row): ?>
+              <option value="">-- Seleccione Periodo --</option>              
+              <?php foreach($periodos as $row): ?>
                 <option value="<?php echo Main::encryption($row->idperiodo); ?>"><?php echo $row->periodo; ?></option>
               <?php endforeach; ?>
             </select>
@@ -96,7 +96,7 @@
                   </div>
                 </div>
                 <table id="tbCuadro" class="table table-stripped table-responsive" width="100%" cellspacing="0" cellpadding="0" style="font-size:0.75em; margin-top: -20px;">
-                  <thead class="bg-primary text-light text-center" style="font-size:0.70em;>
+                  <thead class="bg-primary text-light text-center" style="font-size:0.70em;">
                     <tr style="height: 20px; font-weight: bold;">
                       <td scope="col" class="text-center align-middle" rowspan="2" style="width: 5%;">#</td>
                       <td scope="col" class="text-center align-middle verticalText" rowspan="2" style="width: 5%;">MAT. N°</td>
