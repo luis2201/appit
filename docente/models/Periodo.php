@@ -19,7 +19,7 @@
     public static function findTodos()
     {
       $db = new DB();
-      $prepare = $db->prepare("SELECT * FROM tb_periodo ORDER BY periodo;");
+      $prepare = $db->prepare("SELECT * FROM tb_periodo ORDER BY fechainicio;");
       $prepare->execute();
 
       return $prepare->fetchAll(PDO::FETCH_CLASS, Periodo::class);

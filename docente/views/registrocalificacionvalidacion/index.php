@@ -30,8 +30,10 @@
             <label for="cmbidperiodo">Periodo</label>            
             <select name="cmbidperiodo" id="cmbidperiodo" class="form-select">
               <option value="">-- Seleccione Periodo --</option>              
-              <?php foreach($periodos as $row): ?>
-                <option value="<?php echo Main::encryption($row->idperiodo); ?>"><?php echo $row->periodo; ?></option>
+              <?php 
+                $periodosT = Periodo::findTodos();
+                foreach($periodosT as $row1): ?>
+                <option value="<?php echo Main::encryption($row1->idperiodo); ?>"><?php echo $row1->periodo; ?></option>
               <?php endforeach; ?>
             </select>
           </div>
