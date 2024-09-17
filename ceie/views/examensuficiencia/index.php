@@ -23,14 +23,10 @@
                     <div class="row mb-1">
                         <div class="col-md-12">
                             <label for="cmbidperiodo" class="form-label">Periodo Activo</label>
-                            <select class="form-control" id="cmbidperiodo" name="cmbidperiodo">   
-                              <option value="">-- Seleccione un Periodo --</option>                             
-                                <?php 
-                                foreach($periodos as $row): 
-                                  if($row->idperiodo == 17 || $row->idperiodo == 12 || $row->idperiodo == 6 || $row->idperiodo == 13 || $row->idperiodo == 17 || $row->idperiodo == 21){
-                                ?>
+                            <select class="form-control" id="cmbidperiodo" name="cmbidperiodo">                              
+                              <?php foreach($periodos as $row): ?>
                                 <option value="<?php echo Main::encryption($row->idperiodo); ?>"><?php echo $row->periodo; ?></option>
-                                <?php } endforeach; ?>
+                              <?php endforeach; ?>
                             </select>
                         </div>
                     </div>                        
@@ -47,7 +43,31 @@
                         </tr>
                     </thead>
                     <tbody> 
-                    
+                    <?php
+                      $row = '';
+                      $i = 1;
+                      foreach($estudiantes as $row){
+                          echo '<tr>
+                                      <td class="text-center" style="width: 20%">'. $row->idmatricula .'</td>
+                                      <td>'. $row->estudiante .'</td>
+                                      <td class="text-center" style="width: 20%">';
+                                      
+                          $idmatricula = $row->idmatricula;
+                          $params = [":idmatricula" => $idmatricula];                                
+                          $resp = Examensuficiencia::validaInscripcion($params);                                
+                                                          
+                          if(count($resp)==0){
+                              echo '<button id="'. Main::encryption($row->idmatricula) .'" class="btn btn-primary btn-sm" onclick="inscripcion(this.id)">
+                                          <i class="fa fa-check" aria-hidden="true"></i> Inscribir
+                                          </button>';
+                          } else{ 
+                              echo '<span class="badge bg-success">Inscrito</span>';
+                          } 
+                          
+                          echo '</td>
+                                  </tr>';
+                      }
+                    ?>
                     </tbody>
                   </table>
                 </div>

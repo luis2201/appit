@@ -24,7 +24,7 @@
                                     FROM tb_matricula M 
                                         INNER JOIN tb_ceie C ON C.idmatricula = M.idmatricula 
                                         INNER JOIN tb_estudiante E ON M.idestudiante = E.idestudiante 
-                                    WHERE M.idperiodo = :idperiodo AND C.idmodulo = 4 
+                                    WHERE M.idperiodo = :idperiodo 
                                     ORDER BY E.apellido1, E.apellido2, E.nombre1, E.nombre2");
             $prepare->execute($params);
 

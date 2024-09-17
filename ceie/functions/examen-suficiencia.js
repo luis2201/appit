@@ -252,10 +252,10 @@ $("document").ready(function () {
             .appendTo('#tbLista_wrapper .col-md-6:eq(0)');  
 });
 
-var cmbIdPeriodo = document.getElementById("cmbidperiodo");
-cmbIdPeriodo.addEventListener("change", function(){
-    cargaLista(this.value);
-});
+// var cmbIdPeriodo = document.getElementById("cmbidperiodo");
+// cmbIdPeriodo.addEventListener("change", function(){
+//     cargaLista(this.value);
+// });
 
 function inscripcion(idmatricula) {
     $.confirm({
@@ -318,21 +318,21 @@ function inscripcion(idmatricula) {
     });    
 }
 
-async function cargaLista(idperiodo)
-{
-    'use strict';
-    const tbody = document.querySelector('#tbLista tbody');
-    tbody.innerHTML = '';
+// async function cargaLista(idperiodo)
+// {
+//     'use strict';
+//     const tbody = document.querySelector('#tbLista tbody');
+//     tbody.innerHTML = '';
 
-    await axios.post(DIR + 'estudiantes/findallestudiantesperiodomodulo/', {
-        idperiodo
-    })
-    .then(function (res){
-        let rows = res.data;
+//     await axios.post(DIR + 'estudiantes/findallestudiantesperiodomodulo/', {
+//         idperiodo
+//     })
+//     .then(function (res){
+//         let rows = res.data;
 
-        tbody.innerHTML = rows;
-    })
-    .catch(function (error) {
+//         tbody.innerHTML = rows;
+//     })
+//     .catch(function (error) {
                 
-    });
-}
+//     });
+// }

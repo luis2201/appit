@@ -4,9 +4,15 @@
     {
         public function index()
         {
-            $periodos = Periodo::findAll();
+            $periodos = Periodo::findActivo();
+            foreach($periodos as $row){
+                $idperiodo = $row->idperiodo;
+            }
 
-            view("examensuficiencia.index", ["periodos" => $periodos]);
+            $params = [":idperiodo" => $idperiodo];
+            $estudiantes = Estudiantes::findallestudiantesperiodomodulo($params);
+
+            view("examensuficiencia.index", ["periodos" => $periodos, "estudiantes" => $estudiantes]);
         }
 
         public function insert()
