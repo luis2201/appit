@@ -15,6 +15,7 @@ include_once "models/Asignarmateria.php";
 include_once "models/Calificaciones.php";
 include_once "models/Nivel.php";
 include_once "models/Record.php";
+include_once "models/Registrocalificacion.php";
 
 $controller = ucfirst($_GET['controller']);
 

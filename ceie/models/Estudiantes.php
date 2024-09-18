@@ -22,7 +22,6 @@
 
             $prepare = $db->prepare("SELECT M.idmatricula, CONCAT(E.apellido1,' ', E.apellido2,' ', E.nombre1,' ', E.nombre2)AS estudiante 
                                     FROM tb_matricula M 
-                                        INNER JOIN tb_ceie C ON C.idmatricula = M.idmatricula 
                                         INNER JOIN tb_estudiante E ON M.idestudiante = E.idestudiante 
                                     WHERE M.idperiodo = :idperiodo 
                                     ORDER BY E.apellido1, E.apellido2, E.nombre1, E.nombre2");
