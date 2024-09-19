@@ -29,7 +29,7 @@
                                 <option value="">-- Seleccione un Periodo --</option>
                                 <?php 
                                   foreach($periodos as $row): 
-                                    if($row->idperiodo == 12 || $row->idperiodo == 17){
+                                    if($row->idperiodo == 12 || $row->idperiodo == 17 || $row->idperiodo == 21){
                                 ?>
                                   <option value="<?php echo Main::encryption($row->idperiodo); ?>"><?php echo $row->periodo; ?></option>
                                 <?php } endforeach; ?>
@@ -106,6 +106,6 @@
 
   <?php include_once './views/layout/footer.php' ?>
   <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-  <script src="<?php echo DIR; ?>functions/reporte-calificacion.js?v=1.0.0"></script>
+  <script src="<?php echo DIR; ?>functions/reporte-calificacion.js?v=1.0.7"></script>
 </body>
 </html>

@@ -18,11 +18,6 @@
 
     </div>
     <div class="card-body"> 
-      <div class="alert alert-success text-justify">
-        Seleccione la información de los campos que están a continuación, luego de clic en el botón <strong>Ingresar calificaciones</strong>. Para asignar una calificación ubíquese con un
-        clic en el casillero del parámetro que desea calificar y digite el valor, Ud. podrá navegar entre los campos con la tecla de tabulación (ubicada arriba del Bloq. Mayús. 
-        en el teclado de su computador de escritorio o laptop). <strong>Las calificaciones se guardarán automáticamente conforme las vaya ingresando.</strong>
-      </div>
       <!-- Parámetros de búsqueda -->
       <div class="form form-group">
         <input type="hidden" id="iddocente" value="<?php echo Main::encryption($_SESSION['idusuario_appit']); ?>">
@@ -149,7 +144,7 @@
 <!-- Scripts -->
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-<script src="<?php echo DIR; ?>functions/registro-calificacion.js?v=1.0.3"></script>
+<script src="<?php echo DIR; ?>functions/registro-calificacion.js?v=1.0.4"></script>
 </body>
 <style>
 
