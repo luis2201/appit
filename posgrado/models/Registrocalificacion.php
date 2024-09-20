@@ -47,4 +47,13 @@
             return $prepare->fetchAll(PDO::FETCH_CLASS, Registrocalificacion::class);
         }
 
+        public function insertCalificacion()
+        {
+            $params = [":idmatricula" => $this->idmatricula, ":idperiodo" => $this->idperiodo, ":idmateria" => $this->idmateria, ":idparcial" => $this->idparcial, ":aporte" => $this->aporte, ":lecciones" => $this->lecciones, ":tdocencia" => $this->tdocencia, ":practica" => $this->practica, ":tpractica" => $this->tpractica, ":aprendizaje" => $this->aprendizaje, ":taprendizaje" => $this->taprendizaje, ":resultado" => $this->resultado, ":tresultado" => $this->tresultado, ":total" => $this->total];
+      
+            $prepare = $this->prepare("call sp_calificacion_introductorio_insert_update(:idmatricula, :idperiodo, :idmateria, :idparcial, :aporte, :lecciones, :tdocencia, :practica, :tpractica, :aprendizaje, :taprendizaje, :resultado, :tresultado, :total);");
+            
+            return $prepare->execute($params);
+        }
+
     }

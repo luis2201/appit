@@ -90,6 +90,50 @@
             
             echo json_encode($rows);
         }
+
+        public function insertcalificacion()
+        {
+            $data = json_decode(file_get_contents('php://input'));
+
+            $idmatricula = Main::limpiar_cadena($data->idmatricula);
+            $idperiodo = Main::limpiar_cadena($data->idperiodo);      
+            $idmateria = Main::limpiar_cadena($data->idmateria);
+            $idparcial = Main::limpiar_cadena($data->idparcial);
+            $aporte = Main::limpiar_cadena($data->aporte);
+            $lecciones = Main::limpiar_cadena($data->lecciones);
+            $tdocencia = Main::limpiar_cadena($data->tdocencia);
+            $practica = Main::limpiar_cadena($data->practica);
+            $tpractica = Main::limpiar_cadena($data->tpractica);
+            $aprendizaje = Main::limpiar_cadena($data->aprendizaje);
+            $taprendizaje = Main::limpiar_cadena($data->taprendizaje);
+            $resultado = Main::limpiar_cadena($data->resultado);
+            $tresultado = Main::limpiar_cadena($data->tresultado);
+            $total = Main::limpiar_cadena($data->total);
+
+            $idperiodo = Main::decryption($idperiodo);
+            $idmateria = Main::decryption($idmateria);
+            $idparcial = Main::decryption($idparcial);
+
+            $registros = new Registrocalificacion();
+            $registros->idmatricula = $idmatricula;
+            $registros->idperiodo = $idperiodo;      
+            $registros->idmateria = $idmateria;
+            $registros->idparcial = $idparcial;
+            $registros->aporte = $aporte;
+            $registros->lecciones = $lecciones;
+            $registros->tdocencia = $tdocencia;
+            $registros->practica = $practica;
+            $registros->tpractica = $tpractica;
+            $registros->aprendizaje = $aprendizaje;
+            $registros->taprendizaje = $taprendizaje;
+            $registros->resultado = $resultado;
+            $registros->tresultado = $tresultado;
+            $registros->total = $total;
+
+            $res = $registros->insertCalificacion();
+
+            echo json_encode($res);
+        }
     }
 
 ?>
