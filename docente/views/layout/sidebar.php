@@ -168,8 +168,8 @@
                 <div id="configuracion" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Cuadros de Notas:</h6>
-                        <a class="collapse-item" href="cuadroparcial">Cuadro General</a>
-                        <a class="collapse-item" href="cuadrogeneral">Cuadro Parcial</a>
+                        <!-- <a class="collapse-item" href="cuadroparcial">Cuadro General</a> -->
+                        <a class="collapse-item" href="cuadrogeneral">Cuadro General</a>
                         <a class="collapse-item" href="cuadrogeneralenlinea">Cuadro General en Línea</a>
                     </div>
                 </div>

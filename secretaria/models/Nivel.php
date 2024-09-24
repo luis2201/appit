@@ -21,7 +21,6 @@
                           INNER JOIN tb_nivel N ON M.idnivel = N.idnivel
                       WHERE E.numero_identificacion = :numero_identificacion
                       AND M.idcarrera = :idcarrera
-                      AND M.idperiodo != 21
                       ORDER BY N.idnivel");
       $prepare->execute($params);
 
