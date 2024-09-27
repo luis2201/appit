@@ -107,7 +107,7 @@
                 $suma = $reporte->calificacion;
                 $total = $suma;
                 $sup = $reporte->supletorio;
-                if($suma>=56 && $suma<=69){
+                if($suma>=56 && $suma<70){
                     if($sup>=14){
                         $total = $suma + $sup;
                         if($total>70){
