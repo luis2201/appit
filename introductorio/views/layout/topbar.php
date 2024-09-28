@@ -10,7 +10,7 @@
                         <?php
                             $periodos = Periodo::findAll();                            
                             foreach ($periodos as $row) :
-                                if($row->idperiodo==17){
+                                if($row->idperiodo==21){
                                     $idperiodo = $row->idperiodo;
                                 
                         ?>
