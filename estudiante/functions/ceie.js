@@ -16,7 +16,7 @@ btnMatricular.addEventListener("click", async function () {
   let idmodulo = document.getElementById("idmodulo").value;
   let idestudiante = document.getElementById("estudianteid").value;
 
-  await axios.post('https://appit.itsup.edu.ec/estudiante/ceie/insert/', {
+  await axios.post(DIR + 'ceie/insert/', {
       idperiodo,
       idestudiante,
       idmodulo,
