@@ -5,10 +5,11 @@
         public function index()
         {
             // $carreras = Carrera::findCarreraIdDocente([":idperiodo" => 17, ":iddocente" => $_SESSION["idusuario_appit"]]);
-            $param = [":idperiodo" => 21, ":iddocente" => $_SESSION["idusuario_appit"]];
-            $materias = Materia::findMateriaIdDocente($param);
+            // $param = [":idperiodo" => 21, ":iddocente" => $_SESSION["idusuario_appit"]];
+            // $materias = Materia::findMateriaIdDocente($param);
             
-            view("registrocalificacionvirtual.index", ["materias" => $materias]);
+            // view("registrocalificacionvirtual.index", ["materias" => $materias]);
+            view("registrocalificacionvirtual.index", []);
         }
 
         public function viewlistaestudiantemateria()

@@ -42,7 +42,12 @@
             <label for="idmateria">Materia</label>
             <select name="idmateria" id="idmateria" class="form-select">
               <option value="">-- Seleccione Materia --</option>
-              <?php foreach($materias as $row): ?>
+              <?php 
+                $param = [":idperiodo" => 21, ":iddocente" => $_SESSION["idusuario_appit"]];
+                $materias = Materia::findMateriaIdDocente($param);
+
+                foreach($materias as $row): 
+              ?>
                 <option value="<?php echo Main::encryption($row->idmateria); ?>"><?php echo '(' .$row->codigo.') ' .$row->materia; ?></option>
               <?php endforeach; ?>
             </select>
