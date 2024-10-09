@@ -11,7 +11,7 @@ cmbIdCarrera.addEventListener("change", async function(){
   optnivel.forEach(o => o.remove());
 
   if(cmbIdCarrera.value != "") {
-    await axios.post('https://appit.itsup.edu.ec/docente/nivel/findnivelidperiodotutorenlinea/', {
+    await axios.post(DIR + 'nivel/findnivelidperiodotutorenlinea/', {
         idperiodo,
         idcarrera,
         iddocente
@@ -66,7 +66,7 @@ btnMostrar.addEventListener("click", async function(){
   let  idcarrera = document.getElementById("idcarrera").value;
   let idnivel = document.getElementById("idnivel").value;  
 
-  await axios.post('https://appit.itsup.edu.ec/docente/cuadrogeneralenlinea/findestudianteidmateria/', {
+  await axios.post(DIR + 'cuadrogeneralenlinea/findestudianteidmateria/', {
     idperiodo,
     idcarrera,
     idnivel,    

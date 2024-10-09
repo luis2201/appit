@@ -55,7 +55,7 @@
                   <div class="col-12 mb-2 text-center">
                     <img src="<?php DIR; ?>img/header_report.png" alt="">
                     <h6 class="m-2"><strong>Cuadro General</strong></h6>
-                    <h6 style="margin-top: -10px">Periodo Académico: Mayo - Octubre 2023</h6>
+                    <h6 style="margin-top: -10px">Periodo Académico: Mayo - Octubre 2024</h6>
                   </div>
                 </div>
                 <div class="row" style="margin-top: -10px; font-size:12px;">
@@ -92,7 +92,8 @@
 <?php include_once './views/layout/footer.php' ?>
 <!--    Scripts -->
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
-<script src="<?php echo DIR; ?>functions/cuadrogeneral-enlinea.js"></script>
+<script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
+<script src="<?php echo DIR; ?>functions/cuadrogeneral-enlinea.js?v=1.0.1"></script>
 
 </body>
 
