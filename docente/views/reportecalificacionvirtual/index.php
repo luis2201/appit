@@ -25,7 +25,13 @@
             <label for="idcarrera">Carrera</label>
             <select name="idcarrera" id="idcarrera" class="form-select">
               <option value="">-- Seleccione Carrera --</option>
-              <?php foreach($carreras as $row): ?>
+              <?php 
+                // $param = [":idperiodo" => 21, ":iddocente" => $_SESSION["idusuario_appit"]];
+                // $materias = Materia::findMateriaIdDocente($param);
+                $carreras = Carrera::findCarreraIdDocente([":idperiodo" => 21, ":iddocente" => $_SESSION["idusuario_appit"]]);
+
+                foreach($carreras as $row): 
+              ?>
                 <option value="<?php echo Main::encryption($row->idcarrera); ?>"><?php echo $row->carrera; ?></option>
               <?php endforeach; ?>
             </select>
