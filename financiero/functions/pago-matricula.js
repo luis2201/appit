@@ -344,7 +344,7 @@ async function mostrarCalificaciones(idestudiante){
   document.getElementById("nombreestudiante").innerHTML = elementosFila[1].innerHTML;
   document.getElementById("nombreestudianteenlinea").innerHTML = elementosFila[1].innerHTML;
 
-  const idperiodo = 17;
+  const idperiodo = 21;
 
   res = await axios.post(DIR + 'matricula/modalidadmatricula/',{
     idestudiante,
