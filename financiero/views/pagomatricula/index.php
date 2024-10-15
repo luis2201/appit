@@ -53,7 +53,7 @@
                   <option value="">-- Seleccione --</option>
                   <?php 
                     foreach($carreras as $row): 
-                      if($row->idcarrera == 4 || $row->idcarrera == 6 || $row->idcarrera == 9 || $row->idcarrera == 15 || $row->idcarrera == 35 || $row->idcarrera == 37 || $row->idcarrera == 38 || $row->idcarrera == 41 || $row->idcarrera == 49 || $row->idcarrera == 50 || $row->idcarrera == 51) { 
+                      if($row->idcarrera == 4 || $row->idcarrera == 6 || $row->idcarrera == 9 || $row->idcarrera == 15 || $row->idcarrera == 35 || $row->idcarrera == 37 || $row->idcarrera == 38 || $row->idcarrera == 41 || $row->idcarrera == 48 || $row->idcarrera == 49 || $row->idcarrera == 50 || $row->idcarrera == 51) { 
                   ?>                  
                   <option value="<?php echo Main::encryption($row->idcarrera); ?>"><?php echo $row->carrera; ?></option>
                   <?php } endforeach; ?>
