@@ -16,7 +16,7 @@
         <div class="container-fluid border-dark">
           <div class="card border-bottom-info">
             <div class="card-header bg-info">
-              <h6 class="text-light"><strong>Periodo I (Mayo - Octubre 2023)</strong></h6>
+              <h6 class="text-light"><strong>Periodo I (Mayo - Octubre 2024)</strong></h6>
             </div>
             <div class="card-body">
               <div class="container">
@@ -25,15 +25,15 @@
                         <tr>
                             <th class="text-center bg-primary" colspan="14">RESUMEN DE NOTAS</th>
                         </tr>
-                        <tr style="font-weight: bold; font-size: 11px;">
-                            <td scope="col" class="text-center align-middle bg-primary" style="width: 15%;">CODIGO</td>
-                            <td scope="col" class="text-center align-middle bg-primary" style="width: 60%;">MATERIA</td>
-                            <td scope="col" class="text-center align-middle bg-primary"><p class="verticalText">TOTAL DOCENCIA</p></td>
-                            <td scope="col" class="text-center align-middle bg-primary"><p class="verticalText">TOTAL PRÁCTICAS</p></td>
-                            <td scope="col" class="text-center align-middle bg-primary"><p class="verticalText">TOTAL AAU</p></td>
-                            <td scope="col" class="text-center align-middle bg-primary"><p class="verticalText">RESULTADOS</p></td>
-                            <td scope="col" class="text-center align-middle bg-primary">SUMA</td>
-                            <td scope="col" class="text-center align-middle bg-primary">OBSERVACION</td>
+                        <tr style="height: 20px; font-weight: bold; font-size: 11px;">
+                            <td scope="col" class="text-center align-middle bg-primary" rowspan="2" style="width: 15%;">CODIGO</td>
+                            <td scope="col" class="text-center align-middle bg-primary" rowspan="2" style="width: 60%;">MATERIA</td>
+                            <td scope="col" class="text-center align-middle bg-primary" rowspan="2">PROMEDIO<br>PRIMER PARCIAL</td>
+                            <td scope="col" class="text-center align-middle bg-primary" rowspan="2">PROMEDIO<br>SEGUNDO PARCIAL</td>
+                            <td scope="col" class="text-center align-middle bg-primary" rowspan="2">SUPLETORIO</td>
+                            <td scope="col" class="text-center align-middle bg-primary" rowspan="2">SUMA<br>PROMEDIOS</td>                            
+                            <!-- <td scope="col" class="text-center align-middle bg-primary" rowspan="2">PORCENTAJE<br>ASISTENCIA</td> -->
+                            <td scope="col" class="text-center align-middle bg-primary" rowspan="2">OBSERVACION</td>
                         </tr>
                     </thead>
                     <tbody> 
@@ -47,7 +47,7 @@
 
       <?php include_once './views/layout/footer.php'; ?>
       <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-      <script src="<?php echo DIR; ?>functions/resumen-virtual.js?v=1.0.1"></script>
+      <script src="<?php echo DIR; ?>functions/resumen-virtual.js?v=1.0.2"></script>
 </body>
 
 </html>

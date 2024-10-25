@@ -16,7 +16,7 @@
         <div class="container-fluid border-dark">
           <div class="card border-bottom-info">
             <div class="card-header bg-info">
-              <h6 class="text-light"><strong>Periodo II (NOVIEMBRE 2023 - ABRIL 2024)</strong></h6>
+              <h6 class="text-light"><strong>Periodo II (NOVIEMBRE 2024 - ABRIL 2025)</strong></h6>
             </div>
             <div class="card-body">
               <div class="container">
