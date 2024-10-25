@@ -89,7 +89,7 @@
         $acu = 0; 
         $niv = count($resp);
             
-        foreach($resp as $row):                    
+        foreach($resp as $row):                   
     ?>
     
     <p style="margin-top:10px; margin-bottom:0px;"><strong>NIVEL: </strong><?php echo $row->nivel; ?></p>
@@ -97,7 +97,7 @@
     <?php 
         $params = [":numero_identificacion" => $numero_identificacion, ":idnivel" => $row->idnivel];        
         $resp = Record::findMateriasNotasEstudianteEnLinea($params);
-        
+
         $i = 1;
         $n = 0;
         $s = 0;        
@@ -110,10 +110,10 @@
             <td><?php echo $reporte->materia; ?></td>
             <td style="width:36%"><?php echo $reporte->periodo; ?></td>            
             <?php 
-                $suma = $reporte->total;
+                $suma = $reporte->calificacion;
                 $total = $suma;
                 $sup = $reporte->supletorio;
-                if($suma>=56 && $suma<=69){
+                if($suma>=56 && $suma<70){
                     if($sup>=14){
                         $total = $suma + $sup;
                         if($total>70){

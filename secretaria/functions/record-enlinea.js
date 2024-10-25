@@ -9,7 +9,7 @@ cmbIdPeriodo.addEventListener("change", async function(){
   let idperiodo = cmbIdPeriodo.value;
   
   if(cmbIdPeriodo.value != "") {
-    await axios.get('https://appit.itsup.edu.ec/secretaria/carrera/findcarreraperiodovirtual/' + idperiodo )
+    await axios.get(DIR + 'carrera/findcarreraperiodovirtual/' + idperiodo )
     .then(function (res){
       let info = res.data;
             
@@ -54,7 +54,7 @@ cmbIdCarrera.addEventListener("change", async function(){
         let idperiodo = document.getElementById("cmbidperiodo").value; 
         let idcarrera = this.value;
         
-        await axios.post('https://appit.itsup.edu.ec/secretaria/nivel/findnivelcarreraenlinea/', {
+        await axios.post(DIR + 'nivel/findnivelcarreraenlinea/', {
             idperiodo,
             idcarrera
         })
@@ -110,7 +110,7 @@ btnLista.addEventListener("click", async function(){
   const tbody = document.querySelector('#tbLista tbody');
   tbody.innerHTML = '';
 
-  await axios.post('https://appit.itsup.edu.ec/secretaria/recordenlinea/viewlista', {
+  await axios.post(DIR + 'recordenlinea/viewlista', {
     idperiodo,
     idcarrera,
     idnivel
