@@ -170,24 +170,24 @@
                 $params = [":idperiodo" => $idperiodo, ":idmateria" => $materias->idmateria];
                 $horas = count(Asistencia::findHorasClase($params)) * 2;
 
-                $params = [":idperiodo" => $idperiodo, ":idmatricula" => $idmatricula, ":idmateria" => $materias->idmateria];
-                $res = Asistencia::findAsistenciasIdMatricula($params);
+                // $params = [":idperiodo" => $idperiodo, ":idmatricula" => $idmatricula, ":idmateria" => $materias->idmateria];
+                // $res = Asistencia::findAsistenciasIdMatricula($params);
                 
-                $asistencias = 0;
-                $inasistencias = 0;
-                foreach($res as $asis){                    
-                    if($asis->asistencia == 100){                        
-                        $asistencias += 2;
-                    } elseif($asis->asistencia == 50){
-                        $asistencias += 1;
-                    } else{
-                        $asistencia = 0;
-                    }
-                }
+                // $asistencias = 0;
+                // $inasistencias = 0;
+                // foreach($res as $asis){                    
+                //     if($asis->asistencia == 100){                        
+                //         $asistencias += 2;
+                //     } elseif($asis->asistencia == 50){
+                //         $asistencias += 1;
+                //     } else{
+                //         $asistencia = 0;
+                //     }
+                // }
 
-                $inasistencias = $horas - $asistencias;
+                // $inasistencias = $horas - $asistencias;
                 
-                $pasistencia = ($horas>0)?$asistencias * 100 / $horas:0; 
+                // $pasistencia = ($horas>0)?$asistencias * 100 / $horas:0; 
 
                 // if($final>=70 && $pasistencia>=75){
                 //     $observacion = '<strong class="text-dark">APROBADO</strong>';
@@ -196,11 +196,9 @@
                 // }
 
                  //OBSERVACIÓN             
-                if($final>=70 && $pasistencia>=75){                
+                if($final>=70){                
                     $observacion = '<td class="text-center">APROBADO</td>';
-                } elseif ($final>=70 && $pasistencia<75) {
-                    $observacion = '<td class="text-center text-danger">R.P.FALTAS</td>';
-                } elseif ($final>=50 && $pasistencia>=75) {
+                } elseif ($final>=50) {
                     $observacion = '<td class="text-center text-success">SUPLETORIO</td>';            
                 } else{
                     $observacion = '<td class="text-center text-danger">REPROBADO</td>';
