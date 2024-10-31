@@ -5,7 +5,7 @@ async function init()
   const idperiodo = document.getElementById("idperiodo").value;
   const iddocente = document.getElementById("idusuario").value;
 
-  await axios.post('https://appit.itsup.edu.ec/docente/carrera/findcarreradocente/', {
+  await axios.post(DIR + 'carrera/findcarreradocente/', {
     idperiodo,
     iddocente
   })
@@ -39,7 +39,7 @@ cmbIdCarrera.addEventListener('change', async function () {
   optmateria.forEach(o => o.remove());
 
   if(cmbIdCarrera.value != "") {
-    await axios.get('https://appit.itsup.edu.ec/docente/seccion/findseccionidperiodo/' + idperiodo )
+    await axios.get(DIR + 'seccion/findseccionidperiodo/' + idperiodo )
     .then(function (res){
       let info = res.data;
 
@@ -159,7 +159,7 @@ cmbModalidad.addEventListener('change', async function () {
   optmateria.forEach(o => o.remove());
 
   if(cmbModalidad.value != "") {
-    await axios.post('https://appit.itsup.edu.ec/docente/docente/finddocentecarreracurso/', {
+    await axios.post(DIR + 'docente/finddocentecarreracurso/', {
       idperiodo,
       idcarrera,
       iddocente
@@ -216,7 +216,7 @@ cmbNivel.addEventListener('change', async function () {
   optmateria.forEach(o => o.remove());
 
   if(cmbNivel.value != "") {
-    await axios.post('https://appit.itsup.edu.ec/docente/docente/finddocentecarreramateria/', {
+    await axios.post(DIR + 'docente/finddocentecarreramateria/', {
       idperiodo,
       idcarrera,
       idnivel,
@@ -285,7 +285,7 @@ btnMostrar.addEventListener("click", async function (){
   const tbody = document.querySelector('#tbLista tbody');
   tbody.innerHTML = '';
 
-  await axios.post('https://appit.itsup.edu.ec/docente/supletorio/viewlistaestudiantemateria/', {
+  await axios.post(DIR + 'supletorio/viewlistaestudiantemateria/', {
     idperiodo,
     idcarrera,
     idseccion,
@@ -402,7 +402,7 @@ async function total(input)
   document.getElementById("t-"+param[1]).value =  "";    
   document.getElementById("t-"+param[1]).value =  total;    
   
-  await axios.post('https://appit.itsup.edu.ec/docente/supletorio/insertsupletorio/', {
+  await axios.post(DIR + 'supletorio/insertsupletorio/', {
     idperiodo,
     idmatricula,
     idcarrera,
