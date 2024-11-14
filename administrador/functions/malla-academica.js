@@ -141,6 +141,71 @@ async function agregaMalla(idmateria)
     }
 }
 
+async function eliminaMateria(idmateria){
+  let idcarrera = document.getElementById("idcarrera").value;
+  let idnivel = document.getElementById("idnivel").value;
+
+  await axios.post(DIR + 'mallaacademica/eliminamateriamalla', {
+    idmateria,
+    idperiodo,
+    idcarrera,
+    idnivel
+  })
+  .then(function (res) {
+      let table = res.data;
+
+      if(table){
+        $.confirm({
+            title: 'Información del Sistema',
+            icon: 'far fa-thumbs-up',
+            content: 'Materia eliminada de la malla satisfactoriamente',
+            theme: 'modern',
+            type: 'blue',
+            typeAnimated: true,
+            buttons: {
+                aceptar: function () {
+
+                }
+            }
+        });
+      } else {
+        $.confirm({
+            title: 'Información del Sistema',
+            icon: 'fa fa-exclamation-triangle',
+            content: 'No es posible eliminar la materia. Intente nuevamente',
+            theme: 'modern',
+            type: 'red',
+            typeAnimated: true,
+            buttons: {
+                aceptar: function () {
+
+                }
+            }
+        });
+      }
+
+      document.getElementById("tabla").innerHTML = ''; 
+      document.getElementById("tabla").innerHTML = table; 
+      estiloTabla();
+  })
+  .catch(function (error) {
+      console.log(error);
+      $.confirm({
+          title: 'Acceso no autorizado',
+          icon: 'fa fa-exclamation-triangle',
+          content: error.data,
+          theme: 'modern',
+          type: 'red',
+          typeAnimated: true,
+          buttons: {
+              aceptar: function () {
+
+              }
+          }
+      });
+  });
+}
+
 function cerrarMateria()
 {
     modalMateria.hide();

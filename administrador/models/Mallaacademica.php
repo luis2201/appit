@@ -27,4 +27,13 @@
             return $prepare->execute($params);
         }
 
+        public static function eliminaMateriaMalla($params)
+        {
+            $db = new DB();
+
+            $prepare = $db->prepare("DELETE FROM tb_malla WHERE idperiodo = :idperiodo AND idcarrera = :idcarrera AND idnivel = :idnivel AND idmateria = :idmateria");
+            
+            return $prepare->execute($params);
+        }
+
     }

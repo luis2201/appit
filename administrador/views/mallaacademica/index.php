@@ -81,7 +81,7 @@
 <?php include_once './views/layout/footer.php' ?>
 <!--    Scripts -->
 <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-<script src="<?php echo DIR; ?>functions/malla-academica.js?v=1.1.3"></script>
+<script src="<?php echo DIR; ?>functions/malla-academica.js?v=1.1.8"></script>
 </body>
 
 </html>
