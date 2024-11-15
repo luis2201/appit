@@ -68,7 +68,7 @@
     </table>
     <?php endforeach; ?>
 
-    <table style="background-color: #e2e3e5; border:1px solid #000; margin-top:15px; width:100%; font-size:0.7em;">
+    <table style="background-color: #e2e3e5; border:1px solid #000; margin-top:15px; width:100%; font-size:0.7em; text-align:center;">
         <th style="width:2%">No.</th>
         <th>ASIGNATURA</th>
         <th style="width:36%">PERIODO</th>
@@ -196,7 +196,7 @@
                     if($pasistencia>=75){
                         $observacion =  'APROBADO'; 
                     } else{
-                        if($reporte->idperiodo == 12 || $reporte->idperiodo == 17){
+                        if($reporte->idperiodo == 12 || $reporte->idperiodo == 17 || $reporte->idperiodo == 21){
                             $observacion = '<span style="color:red;">REPROBADO POR FALTAS</span>';
                         } else{
                             $observacion =  'APROBADO'; 
@@ -336,23 +336,23 @@
 
 <?php
     
-    $html = ob_get_clean();
-    //echo $html;
+    // $html = ob_get_clean();
+    // //echo $html;
 
-    require_once 'dompdf/autoload.inc.php';
-    use Dompdf\Dompdf;
-    $dompdf = new Dompdf();
+    // require_once 'dompdf/autoload.inc.php';
+    // use Dompdf\Dompdf;
+    // $dompdf = new Dompdf();
 
-    $options = $dompdf->getOptions();
-    $options->set(array('isRemoteEnabled' => true));
-    $dompdf->setOptions($options);
+    // $options = $dompdf->getOptions();
+    // $options->set(array('isRemoteEnabled' => true));
+    // $dompdf->setOptions($options);
 
-    $dompdf->loadHtml($html);
+    // $dompdf->loadHtml($html);
 
-    $dompdf->setPaper('A4','');
+    // $dompdf->setPaper('A4','');
 
-    $dompdf->render();
+    // $dompdf->render();
 
-    $dompdf->stream("record_academico.pdf", array("Attachment" => false));
+    // $dompdf->stream("record_academico.pdf", array("Attachment" => false));
 
 ?> 
