@@ -191,13 +191,13 @@
                 }      
 
                 $pasistencia = number_format(($horas>0)?$asistencias * 100 / $horas:0,2);
-
+                
                 if($total>=70){
                     if($pasistencia>=75){
                         $observacion =  'APROBADO'; 
                     } else{
                         if($reporte->idperiodo == 12 || $reporte->idperiodo == 17 || $reporte->idperiodo == 21){
-                            $observacion = '<span style="color:red;">REPROBADO POR FALTAS</span>';
+                            $observacion = '<span style="color:red;">R. FALTAS</span>';
                         } else{
                             $observacion =  'APROBADO'; 
                         }
@@ -336,23 +336,23 @@
 
 <?php
     
-    // $html = ob_get_clean();
-    // //echo $html;
+    $html = ob_get_clean();
+    //echo $html;
 
-    // require_once 'dompdf/autoload.inc.php';
-    // use Dompdf\Dompdf;
-    // $dompdf = new Dompdf();
+    require_once 'dompdf/autoload.inc.php';
+    use Dompdf\Dompdf;
+    $dompdf = new Dompdf();
 
-    // $options = $dompdf->getOptions();
-    // $options->set(array('isRemoteEnabled' => true));
-    // $dompdf->setOptions($options);
+    $options = $dompdf->getOptions();
+    $options->set(array('isRemoteEnabled' => true));
+    $dompdf->setOptions($options);
 
-    // $dompdf->loadHtml($html);
+    $dompdf->loadHtml($html);
 
-    // $dompdf->setPaper('A4','');
+    $dompdf->setPaper('A4','');
 
-    // $dompdf->render();
+    $dompdf->render();
 
-    // $dompdf->stream("record_academico.pdf", array("Attachment" => false));
+    $dompdf->stream("record_academico.pdf", array("Attachment" => false));
 
 ?> 

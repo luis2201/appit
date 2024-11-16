@@ -113,6 +113,7 @@
                                         C.idmatricula,
                                         C.idmateria,
                                         T.materia,
+                                        P.idperiodo,
                                         P.periodo,
                                         SUM(CASE WHEN C.idparcial = 1 THEN COALESCE(tdocencia, 0) + COALESCE(tpracticas, 0) + COALESCE(taprendizaje, 0) + COALESCE(tresultados, 0) ELSE 0 END) AS parcial1,
                                         SUM(CASE WHEN C.idparcial = 2 THEN COALESCE(tdocencia, 0) + COALESCE(tpracticas, 0) + COALESCE(taprendizaje, 0) + COALESCE(tresultados, 0) ELSE 0 END) AS parcial2,
