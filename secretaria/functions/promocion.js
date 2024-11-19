@@ -6,7 +6,7 @@ cmbIdPeriodo.addEventListener("change", async function(){
   let idperiodo = cmbIdPeriodo.value;
   
   if(cmbIdPeriodo.value != "") {
-    await axios.get('https://appit.itsup.edu.ec/secretaria/seccion/findseccionidperiodo/' + idperiodo )
+    await axios.get(DIR + 'seccion/findseccionidperiodo/' + idperiodo )
     .then(function (res){
       let info = res.data;
 
@@ -61,7 +61,7 @@ btnLista.addEventListener("click", async function(){
   const tbody = document.querySelector('#tbLista tbody');
   tbody.innerHTML = '';
 
-  await axios.post('https://appit.itsup.edu.ec/secretaria/promocion/viewlista', {
+  await axios.post(DIR + 'promocion/viewlista', {
     idperiodo,
     idcarrera,
     idseccion,
@@ -104,7 +104,7 @@ async function mostrarCalificaciones(idmatricula){
     const tbody = document.querySelector('#tbCalificaciones tbody');
     tbody.innerHTML = '';
 
-    await axios.post('https://appit.itsup.edu.ec/secretaria/promocion/viewcalificacion', {
+    await axios.post(DIR + 'promocion/viewcalificacion', {
       idperiodo,
       idmatricula
     })
@@ -121,7 +121,7 @@ async function mostrarCalificaciones(idmatricula){
     const tbody = document.querySelector('#tbCalificacionesEnLinea tbody');
     tbody.innerHTML = '';
 
-    await axios.post('https://appit.itsup.edu.ec/secretaria/promocion/viewcalificacionenlinea', {
+    await axios.post(DIR + 'promocion/viewcalificacionenlinea', {
       idperiodo,
       idmatricula
     })

@@ -175,7 +175,8 @@
 <?php include_once './views/layout/footer.php' ?>
 <!--    Scripts -->
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
-<script src="<?php echo DIR; ?>functions/promocion.js"></script>
+<script src="<?php echo DIR; ?>functions/global.js?v=1.0.1"></script>
+<script src="<?php echo DIR; ?>functions/promocion.js?v=1.0.1"></script>
 <style>
   #certificacion{
     width: 21cm;
