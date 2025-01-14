@@ -53,7 +53,7 @@
                   <option value="">-- Seleccione --</option>
                   <?php 
                     foreach($carreras as $row): 
-                      if($row->idcarrera == 37 || $row->idcarrera == 38 || $row->idcarrera == 35 || $row->idcarrera == 49 || $row->idcarrera == 15 || $row->idcarrera == 4 || $row->idcarrera == 6 || $row->idcarrera == 9 || $row->idcarrera == 50 || $row->idcarrera == 51) { 
+                      if($row->idcarrera == 4 || $row->idcarrera == 6 || $row->idcarrera == 9 || $row->idcarrera == 15 || $row->idcarrera == 35 || $row->idcarrera == 37 || $row->idcarrera == 38 || $row->idcarrera == 41 || $row->idcarrera == 48 || $row->idcarrera == 49 || $row->idcarrera == 50 || $row->idcarrera == 51 || $row->idcarrera == 53) { 
                   ?>                  
                   <option value="<?php echo Main::encryption($row->idcarrera); ?>"><?php echo $row->carrera; ?></option>
                   <?php } endforeach; ?>
@@ -314,7 +314,7 @@
 
 <?php include_once './views/layout/footer.php' ?>
 <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-<script src="<?php echo DIR; ?>functions/pago-matricula.js?v=1.0.1"></script>
+<script src="<?php echo DIR; ?>functions/pago-matricula.js?v=1.0.3"></script>
 </body>
 
 </html>

@@ -10,7 +10,7 @@
                         <?php 
                             $periodos = Periodo::findActivo(); 
                             foreach($periodos as $row):
-                                if($row->idperiodo == 21){
+                                if($row->idperiodo == 28){
                                 $idperiodo = $row->idperiodo;
                         ?>
                         <input type="hidden" id="idperiodo" value="<?php echo Main::encryption($idperiodo); ?>">

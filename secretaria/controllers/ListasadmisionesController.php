@@ -5,8 +5,10 @@
 
     public function index()
     {
+      $periodosa = Periodo::findActivo();
       $carreras = Carrera::findAll();
-      view('listasadmisiones.index', ["carreras" => $carreras]);
+
+      view('listasadmisiones.index', ["periodosa" => $periodosa, "carreras" => $carreras]);
     }
 
     public function viewlista()

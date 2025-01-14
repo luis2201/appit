@@ -18,6 +18,7 @@
     </div>
     <div class="card-body">
       <?php 
+   
           // $fechaActual = strtotime(date('Y-m-d'));
     
           // $result = Registrocalificacion::validafecha();

@@ -24,11 +24,11 @@ form.addEventListener("submit", async function(event){
     let iddocente = document.getElementById("iddocente").value;
     let idmodulo  = document.getElementById("idmodulo" ).value;
 
-    let res = await axios.post('https://appit.itsup.edu.ec/secretaria/docenteadmisiones/valida/', {idperiodo, iddocente, idmodulo});
+    let res = await axios.post(DIR + 'docenteadmisiones/valida/', {idperiodo, iddocente, idmodulo});
     let info = res.data;
     
     if(info.length == 0){
-        await axios.post('https://appit.itsup.edu.ec/secretaria/docenteadmisiones/insert/', {
+        await axios.post(DIR + 'docenteadmisiones/insert/', {
             idperiodo,
             iddocente,
             idmodulo
@@ -93,7 +93,7 @@ function eliminar(idmodulo_docente)
         typeAnimated: true,
         buttons: {
             aceptar: async function (){
-                await axios.post('https://appit.itsup.edu.ec/secretaria/docenteadmisiones/delete/' + idmodulo_docente)
+                await axios.post(DIR + 'docenteadmisiones/delete/' + idmodulo_docente)
                 .then(function (res){
                     let info = res.data;
 

@@ -50,6 +50,28 @@
 
             echo json_encode($header.$rows.$footer);
         }
+
+        public function findmateriasidcarrera()
+        {
+            $data = json_decode(file_get_contents('php://input'));
+
+            $idperiodo = Main::limpiar_cadena($data->idperiodo);
+            $idcarrera = Main::limpiar_cadena($data->idcarrera);
+
+            $idperiodo = Main::decryption($idperiodo);
+            $idcarrera = Main::decryption($idcarrera);
+            
+            $params = [":idperiodo" => $idperiodo, ":idcarrera" => $idcarrera]; 
+            $res = Materiaintroductorio::findMateriasIdCarrera($params);
+            
+            $options = '<option value="">-- Seleccione Materia --</option>';
+
+            foreach ($res as $row) {
+                $options .= '<option value="'.Main::encryption($row->idmateria).'">'.$row->materia.'</option>';
+            }
+
+            echo json_encode($options);
+        }
     }
 
 ?>

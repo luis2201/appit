@@ -91,6 +91,20 @@
     
           return $prepare->fetchAll(PDO::FETCH_CLASS, Resumen::class);
         }
+
+        public static function findVirtuales($params)
+        {
+          $db = new DB();
+    
+          $prepare = $db->prepare("SELECT *
+                                  FROM tb_calificacion_virtual C
+                                  WHERE C.idmatricula = :idmatricula
+                                  AND C.idmateria = :idmateria
+                                  AND C.idparcial = :idparcial");
+          $prepare->execute($params);
+    
+          return $prepare->fetchAll(PDO::FETCH_CLASS, Resumen::class);
+        }
     }
 
 ?>

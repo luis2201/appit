@@ -7,7 +7,7 @@
     {
       $db = new DB();
       // $prepare = $db->prepare("call sp_seccion_select_all();");
-      $prepare = $db->prepare("SELECT * FROM tb_seccion WHERE idperiodo = 21;");
+      $prepare = $db->prepare("SELECT * FROM tb_seccion WHERE idperiodo = 28;");
       $prepare->execute();
 
       return $prepare->fetchAll(PDO::FETCH_CLASS, Seccion::class);

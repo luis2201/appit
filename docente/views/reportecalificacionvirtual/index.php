@@ -25,7 +25,13 @@
             <label for="idcarrera">Carrera</label>
             <select name="idcarrera" id="idcarrera" class="form-select">
               <option value="">-- Seleccione Carrera --</option>
-              <?php foreach($carreras as $row): ?>
+              <?php 
+                // $param = [":idperiodo" => 21, ":iddocente" => $_SESSION["idusuario_appit"]];
+                // $materias = Materia::findMateriaIdDocente($param);
+                $carreras = Carrera::findCarreraIdDocente([":idperiodo" => 21, ":iddocente" => $_SESSION["idusuario_appit"]]);
+
+                foreach($carreras as $row): 
+              ?>
                 <option value="<?php echo Main::encryption($row->idcarrera); ?>"><?php echo $row->carrera; ?></option>
               <?php endforeach; ?>
             </select>
@@ -56,7 +62,7 @@
                   <div class="col-12 mb-2 text-center">
                     <img src="<?php DIR; ?>img/header_report.png" alt="">
                     <h6 class="m-2"><strong>Alumnos Matriculados</strong></h6>
-                    <h6 style="margin-top: -10px">Periodo Académico: Noviembre 2022-Abril 2023</h6>
+                    <h6 style="margin-top: -10px">Periodo Académico: Mayo - Octubre 2024</h6>
                   </div>
                 </div>
                 <div class="row" style="font-size:0.8em;">

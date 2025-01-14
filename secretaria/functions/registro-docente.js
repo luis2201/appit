@@ -49,7 +49,7 @@ form.addEventListener("submit", async function (event) {
         }
     }
 
-    var exists = await axios.get('https://appit.itsup.edu.ec/secretaria/registrodocente/findnumerodocumento' + numerodocumento);
+    var exists = await axios.get(DIR + 'registrodocente/findnumerodocumento' + numerodocumento);
     let info = exists.data;
 
     if(info.length > 0){
@@ -79,7 +79,7 @@ form.addEventListener("submit", async function (event) {
     formData.append("nombre1", nombre1);
     formData.append("nombre", nombre2);
 
-    await axios.post('https://appit.itsup.edu.ec/secretaria/registrodocente/insertdocente', formData)
+    await axios.post(DIR + 'registrodocente/insertdocente', formData)
     .then(function (res){
         $.confirm({
             title: 'Información del Sistema',
@@ -132,7 +132,7 @@ for (var i = 0; i < btnEliminar.length; i++) {
             typeAnimated: true,
             buttons: {
                 aceptar: async function () {
-                    await axios.get('https://appit.itsup.edu.ec/secretaria/registrodocente/deletedocente/' + iddocente)
+                    await axios.get(DIR + 'registrodocente/deletedocente/' + iddocente)
                     .then(function (res) {
                         console.log(res)
                         $.confirm({

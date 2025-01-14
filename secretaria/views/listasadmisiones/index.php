@@ -21,7 +21,19 @@
       <!-- Parámetros de búsqueda -->
       <div class="form form-group">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-3">
+            <label for="cmbidperiodo">Periodo</label>
+            <select name="cmbidperiodo" id="cmbidperiodo" class="form-select">
+              <option value="">-- Seleccione Periodo --</option>
+              <?php
+       
+              foreach ($periodosa as $row) :
+              ?>
+                <option value="<?php echo Main::encryption($row->idperiodo); ?>"><?php echo $row->periodo; ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+          <div class="col-md-5">
             <label for="idcarrera">Carrera</label>
             <select name="idcarrera" id="idcarrera" class="form-select">
               <option value="">-- Seleccione Carrera --</option>
@@ -32,13 +44,13 @@
               <?php endforeach; ?>
             </select>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
             <label for="modalidad">Modalidad</label>
             <select name="modalidad" id="modalidad" class="form-select">
               <option value="Virtual">Virtual</option>
             </select>
           </div>
-          <div class="col-md-3 mt-3">
+          <div class="col-md-2 mt-3">
             <button id="btnMostrar" type="button" class="btn btn-primary btn-sm btn-block mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye" aria-hidden="true"></i> Mostrar Lista</button>
           </div>
         </div>
@@ -56,7 +68,7 @@
                   <div class="col-12 mb-2 text-center">
                     <img src="<?php DIR; ?>img/header_report.png" alt="">
                     <h6 class="m-2"><strong>Alumnos Inscritos en Nivelación<nav></nav></strong></h6>
-                    <h6>Semestre: Mayo - Octubre 2024</h6>
+                    <!-- <h6>Semestre: Mayo - Octubre 2024</h6> -->
                   </div>
                 </div>
                 <div class="row">
@@ -101,7 +113,8 @@
 <!--    Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.js" integrity="sha512-sk0cNQsixYVuaLJRG0a/KRJo9KBkwTDqr+/V94YrifZ6qi8+OO3iJEoHi0LvcTVv1HaBbbIvpx+MCjOuLVnwKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="<?php echo DIR; ?>functions/listas-admisiones.js?v=1.0.1"></script>
+<script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
+<script src="<?php echo DIR; ?>functions/listas-admisiones.js?v=1.0.7"></script>
 
 </body>
 

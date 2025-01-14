@@ -115,7 +115,8 @@
 <?php include_once './views/layout/footer.php' ?>
 <!--    Scripts -->
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
-<script src="<?php echo DIR; ?>functions/cuadro-parcial.js?v=1.0.3"></script>
+<script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
+<script src="<?php echo DIR; ?>functions/cuadro-parcial.js?v=1.0.4"></script>
 
 </body>
 

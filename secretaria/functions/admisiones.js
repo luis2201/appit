@@ -300,7 +300,7 @@ document.getElementById("btnVolver").addEventListener("click", function(){
 
 async function datosEstudiante(numero_identificacion)
 {
-  await axios.get('https://appit.itsup.edu.ec/secretaria/admisiones/findcedula/' + numero_identificacion)
+  await axios.get(DIR + 'admisiones/findcedula/' + numero_identificacion)
   .then(function (res) {
     let info = res.data[0];
 
@@ -373,7 +373,7 @@ async function inconsistencia(numero_identificacion){
         typeAnimated: true,
         buttons: {
             aceptar: async function () {
-                await axios.get('https://appit.itsup.edu.ec/secretaria/admisiones/inconsistenciadatos' + numero_identificacion)
+                await axios.get(DIR + 'admisiones/inconsistenciadatos' + numero_identificacion)
                 .then(function (res) {
                     window.location.reload();
                 })
@@ -399,7 +399,7 @@ async function rechazar(iddetalle_admision)
     typeAnimated: true,
     buttons: {
       aceptar: async function () {
-        await axios.get('https://appit.itsup.edu.ec/secretaria/admisiones/rechazaradmisiones/' + iddetalle_admision)
+        await axios.get(DIR + 'admisiones/rechazaradmisiones/' + iddetalle_admision)
         .then(function (res) {
           window.location.reload();
         })
@@ -422,7 +422,7 @@ async function aprobar(iddetalle_admision)
     typeAnimated: true,
     buttons: {
       aceptar: async function () {
-        await axios.get('https://appit.itsup.edu.ec/secretaria/admisiones/aprobaradmisiones/' + iddetalle_admision)
+        await axios.get(DIR + 'admisiones/aprobaradmisiones/' + iddetalle_admision)
         .then(function (res) {
           window.location.reload();
         })

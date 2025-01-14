@@ -33,7 +33,7 @@
               </thead>
               <tbody style="font-size:0.8em">
                 <?php      
-                $solicitudes = Solicitudmatricula::findall(21);
+                $solicitudes = Solicitudmatricula::findall($idperiodo);
  
                 foreach ($solicitudes as $row) :
                 ?>

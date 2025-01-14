@@ -50,6 +50,7 @@
                 <div id="calificaciones" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Introductorio</h6>
+                        <a class="collapse-item" href="registrocalificacion">Registro de Calificaciones</a>
                         <a class="collapse-item" href="calificaciones">Calificaciones Individuales</a>
                         <a class="collapse-item" href="calificacionescarrera">Calificaciones Carrea</a>
                     </div>

@@ -68,7 +68,7 @@
     </table>
     <?php endforeach; ?>
 
-    <table style="background-color: #e2e3e5; border:1px solid #000; margin-top:15px; width:100%; font-size:0.7em;">
+    <table style="background-color: #e2e3e5; border:1px solid #000; margin-top:15px; width:100%; font-size:0.7em; text-align:center;">
         <th style="width:2%">No.</th>
         <th>ASIGNATURA</th>
         <th style="width:36%">PERIODO</th>
@@ -107,7 +107,7 @@
                 $suma = $reporte->calificacion;
                 $total = $suma;
                 $sup = $reporte->supletorio;
-                if($suma>=56 && $suma<=69){
+                if($suma>=56 && $suma<70){
                     if($sup>=14){
                         $total = $suma + $sup;
                         if($total>70){
@@ -191,13 +191,13 @@
                 }      
 
                 $pasistencia = number_format(($horas>0)?$asistencias * 100 / $horas:0,2);
-
+                
                 if($total>=70){
                     if($pasistencia>=75){
                         $observacion =  'APROBADO'; 
                     } else{
-                        if($reporte->idperiodo == 12 || $reporte->idperiodo == 17){
-                            $observacion = '<span style="color:red;">REPROBADO POR FALTAS</span>';
+                        if($reporte->idperiodo == 12 || $reporte->idperiodo == 17 || $reporte->idperiodo == 21){
+                            $observacion = '<span style="color:red;">R. FALTAS</span>';
                         } else{
                             $observacion =  'APROBADO'; 
                         }

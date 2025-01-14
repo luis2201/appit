@@ -81,11 +81,11 @@
                                                     <option value="">-- Seleccione Periodo --</option>
                                                     <?php 
                                                         foreach($periodo as $row): 
-                                                            
+                                                            if($row->idperiodo != 28){
                                                     ?>
                                                         <option value="<?php echo Main::encryption($row->idperiodo); ?>"><?php echo $row->periodo; ?></option>
                                                     <?php 
-                                                            
+                                                            }
                                                         endforeach; 
                                                     ?>
                                                 </select>

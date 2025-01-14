@@ -14,7 +14,7 @@
 
       $resp = Materia::findAll($idperiodo, $idcarrera);
 
-      echo json_encode($resp);
+      echo json_encode($idcarrera);
     }
 
     public function finddetallematricula()

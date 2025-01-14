@@ -33,7 +33,7 @@ btnMostrar.addEventListener("click", async function(){
   })
   .then(function (res){   
     let estudiantes = res.data;    
-
+console.log(estudiantes)
     'use strict';
     const tbody = document.querySelector('#tbLista tbody');
     tbody.innerHTML = '';

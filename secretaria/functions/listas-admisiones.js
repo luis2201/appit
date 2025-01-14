@@ -12,30 +12,33 @@ btnMostrar.addEventListener("click", async function(){
       typeAnimated: true,
       buttons: {
         aceptar: function () {
-
+          return;
         }
       }
     });
 
-    return;
+    
   }
     
   myModal.show();
 
-  // idperiodo = document.getElementById("idperiodo").value;
-  idperiodo = 21;
+  idperiodo = document.getElementById("cmbidperiodo").value;
   idcarrera = document.getElementById("idcarrera").value;
   modalidad = document.getElementById("modalidad").value;
 
-  await axios.post('https://appit.itsup.edu.ec/secretaria/listasadmisiones/viewlista', {
+  await axios.post(DIR + 'listasadmisiones/viewlista', {
     idperiodo,
     idcarrera,
     modalidad
   })
   .then(function (res){   
     let estudiantes = res.data;    
-    
-    document.getElementById("semestre").innerHTML = "<strong>SEMESTRE: </strong>" + document.getElementById("periodo").innerText;
+
+    var selectElement = document.getElementById("cmbidperiodo");
+    var selectedIndex = selectElement.selectedIndex;
+    var periodo = selectElement.options[selectedIndex].text;
+
+    document.getElementById("semestre").innerHTML = "<strong>" + periodo + "</strong>";
     document.getElementById("carrera").innerHTML = "<strong>CARRERA: </strong>" + $("#idcarrera option:selected").text();
     // document.getElementById("seccion").innerHTML = "<strong>SECCION: </strong>" + $("#idseccion option:selected").text();
 
@@ -57,6 +60,14 @@ btnMostrar.addEventListener("click", async function(){
 function validate()
 {
   var flag = true;
+  if (document.getElementById("cmbidperiodo").value == "") {
+    input = document.getElementById("cmbidperiodo");
+    input.className += " is-invalid";
+    flag = false;
+  } else {
+    input = document.getElementById("cmbidperiodo");
+    input.classList.remove("is-invalid");
+  }
   if (document.getElementById("idcarrera").value == "") {
     input = document.getElementById("idcarrera");
     input.className += " is-invalid";

@@ -24,7 +24,7 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- MAtrícula y Listas -->
+            <!-- Matrícula y Listas -->
             <div class="sidebar-heading">
                 Mis Datos
             </div>
@@ -168,12 +168,15 @@
                 <div id="configuracion" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Cuadros de Notas:</h6>
-                        <a class="collapse-item" href="cuadroparcial">Cuadro General</a>
-                        <a class="collapse-item" href="cuadrogeneral">Cuadro Parcial</a>
+                        <a class="collapse-item" href="cuadrogeneral">Cuadro General</a>
+                        <a class="collapse-item" href="cuadroparcial">General con Asistencia</a>
                         <a class="collapse-item" href="cuadrogeneralenlinea">Cuadro General en Línea</a>
                     </div>
                 </div>
             </li>
+            <!-- End Tutores -->
+
+            <!-- Coordinador de Carrera -->
             <?php } ?>
             <?php if($_SESSION['idusuario_appit']==23 || $_SESSION['idusuario_appit']==33 || $_SESSION['idusuario_appit']==34 || $_SESSION['idusuario_appit']== 39 || $_SESSION['idusuario_appit']== 29){ ?>
                 <div class="sidebar-heading">
@@ -195,6 +198,26 @@
                 </li>
                 
             <?php } ?>
+            <!-- End Coordinador de Carrera -->
+
+            <!-- Matrícula y Listas -->
+            <div class="sidebar-heading">
+                Solicitudes
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#solicitudes" aria-expanded="true" aria-controls="solicitudes">
+                    <i class="fa fa-id-card-o" aria-hidden="true"></i>
+                    <span>Registro Solicitudes</span>
+                </a>
+                <div id="solicitudes" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Registro de Solicitudes:</h6>
+                        <a class="collapse-item" href="simulaciones">Hospital de Simulación</a>
+                    </div>
+                </div>
+            </li>  
+            <!-- End Matrículas y Listas -->
         </ul>
         <!-- End of Sidebar -->
 

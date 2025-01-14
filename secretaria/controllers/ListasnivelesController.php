@@ -38,7 +38,7 @@
       //               <td scope="col" class="text-center">'.$row->numero_celular.'</th>
       //             </tr>';
       // }
-
+      
       echo json_encode($res);
     }
   

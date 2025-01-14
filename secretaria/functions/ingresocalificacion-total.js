@@ -17,7 +17,7 @@ cmbIdPeriodo.addEventListener("change", async function(){
   optparcial.forEach(o => o.remove());
 
   if(cmbIdPeriodo.value != "") {
-    await axios.post('https://appit.itsup.edu.ec/secretaria/carrera/findall/', {
+    await axios.post(DIR + 'carrera/findall/', {
       idperiodo
     })
     .then(function (res){
@@ -86,7 +86,7 @@ cmbIdCarrera.addEventListener('change', async function () {
   optmateria.forEach(o => o.remove());
 
   if(cmbIdCarrera.value != "") {
-    await axios.post('https://appit.itsup.edu.ec/secretaria/nivel/findcursoidcarrerapresencial/',{
+    await axios.post(DIR + 'nivel/findcursoidcarrerapresencial/',{
       idperiodo,
       idcarrera
     })
@@ -135,7 +135,7 @@ cmbNivel.addEventListener('change', async function () {
   optmateria.forEach(o => o.remove());
 
   if(cmbNivel.value != "") {
-    await axios.post('https://appit.itsup.edu.ec/secretaria/malla/findmaterianivelcarreraperiodo/', {
+    await axios.post(DIR + 'malla/findmaterianivelcarreraperiodo/', {
       idperiodo,
       idcarrera,
       idnivel
@@ -190,7 +190,7 @@ btnMostrar.addEventListener("click", async function (){
   var idperiodo = document.getElementById("cmbidperiodo").value;
   var idmateria = document.getElementById("idmateria").value;
 
-  await axios.post('https://appit.itsup.edu.ec/secretaria/ingresocalificaciontotal/viewlistaestudiantemateria/', {
+  await axios.post(DIR + 'ingresocalificaciontotal/viewlistaestudiantemateria/', {
     idperiodo,
     idmateria
   })
@@ -454,7 +454,7 @@ async function total(input)
   document.getElementById("t-"+param[1]).value =  "";    
   document.getElementById("t-"+param[1]).value =  total;   
 
-  await axios.post('https://appit.itsup.edu.ec/secretaria/ingresocalificaciontotal/insertcalificacion/', {
+  await axios.post(DIR + 'ingresocalificaciontotal/insertcalificacion/', {
     idperiodo,
     idmatricula,
     idcarrera,    
@@ -490,7 +490,7 @@ async function cargarCalificacion(idmatricula)
   var idperiodo = document.getElementById("cmbidperiodo").value;
   var idmateria = document.getElementById("idmateria").value;
 
-  await axios.post('https://appit.itsup.edu.ec/secretaria/ingresocalificaciontotal/findcalificacionidmatricula/',{
+  await axios.post(DIR + 'ingresocalificaciontotal/findcalificacionidmatricula/',{
     idmatricula, 
     idperiodo,
     idmateria

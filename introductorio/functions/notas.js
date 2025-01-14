@@ -1,5 +1,6 @@
 $(document).ready(async function (){
     document.getElementById("nombreperiodo").innerText = document.getElementById("periodo").innerText;
+  
     parcial1();
 
     parcial2();

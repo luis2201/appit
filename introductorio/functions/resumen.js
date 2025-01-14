@@ -1,6 +1,6 @@
 $("document").ready(async function(){
     const idestudiante = document.getElementById("idestudiante").value;
-    const idperiodo = 17;
+    const idperiodo = 21;
 
     'use strict';
     const tbody = document.querySelector('#tbLista tbody');

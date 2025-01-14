@@ -21,7 +21,6 @@
                           INNER JOIN tb_nivel N ON M.idnivel = N.idnivel
                       WHERE E.numero_identificacion = :numero_identificacion
                       AND M.idcarrera = :idcarrera
-                      AND M.idperiodo != 21
                       ORDER BY N.idnivel");
       $prepare->execute($params);
 
@@ -35,7 +34,8 @@
                               FROM tb_estudiante E 
                                 INNER JOIN tb_matricula M ON E.idestudiante = M.idestudiante
                                   INNER JOIN tb_nivel N ON M.idnivel = N.idnivel
-                              WHERE E.numero_identificacion = :numero_identificacion");
+                              WHERE E.numero_identificacion = :numero_identificacion
+                              AND M.idperiodo <> 28"); //Esta línea es para en los record académicos no colocar el periodo actual
       $prepare->execute($params);
 
       return $prepare->fetchAll(PDO::FETCH_CLASS, Nivel::class);

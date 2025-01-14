@@ -530,7 +530,7 @@ async function agregarDocente(iddocente) {
 
     const idperiodo = document.getElementById("idperiodo").value; 
     
-    await axios.post('https://appit.itsup.edu.ec/secretaria/cargahoraria/findcargadocente/', {
+    await axios.post(DIR + 'cargahoraria/findcargadocente/', {
         iddocente,
         idperiodo
     })
@@ -599,7 +599,7 @@ btnBuscarM.addEventListener("click", async function () {
         return;
     }
 
-    await axios.post('https://appit.itsup.edu.ec/secretaria/cargahoraria/findmateriamalla/', {
+    await axios.post(DIR + 'cargahoraria/findmateriamalla/', {
         idperiodo,
         idcarrera,
         idnivel
@@ -670,7 +670,7 @@ form.addEventListener("submit", async function(e)
     formData.append("modalidad", document.getElementById("modalidad").value);
     formData.append("horas", document.getElementById("horas").value);
 
-    let valida = await axios.post('https://appit.itsup.edu.ec/secretaria/cargahoraria/validacarga/', formData);
+    let valida = await axios.post(DIR + 'cargahoraria/validacarga/', formData);
     if(valida.data.length>0){
         $.confirm({
             title: 'Información del Sistema',
@@ -689,7 +689,7 @@ form.addEventListener("submit", async function(e)
         return;
     }
 
-    await axios.post('https://appit.itsup.edu.ec/secretaria/cargahoraria/insert', formData)
+    await axios.post(DIR + 'cargahoraria/insert', formData)
     .then(function(res) {
         let info = res.data;
         $.confirm({
@@ -703,7 +703,7 @@ form.addEventListener("submit", async function(e)
               aceptar: async function () {
                 const idperiodo = document.getElementById("idperiodo").value; 
                 let iddocente = document.getElementById("iddocente").value;
-                await axios.post('https://appit.itsup.edu.ec/secretaria/cargahoraria/findcargadocente/', {
+                await axios.post(DIR + 'cargahoraria/findcargadocente/', {
                     iddocente,
                     idperiodo
                 })
@@ -1080,7 +1080,7 @@ async function cargaMateriaDocente(data)
 
     const idperiodo = document.getElementById("idperiodo").value; 
     let iddocente = document.getElementById("iddocente").value;
-    await axios.post('https://appit.itsup.edu.ec/secretaria/cargahoraria/totalhorasdocente/', {
+    await axios.post(DIR + 'cargahoraria/totalhorasdocente/', {
         iddocente,
         idperiodo
     })

@@ -75,7 +75,7 @@
 
   <?php include_once './views/layout/footer.php' ?>
   <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-  <script src="<?php echo DIR; ?>functions/solicitud-matricula.js?v=1.0.3"></script>
+  <script src="<?php echo DIR; ?>functions/solicitud-matricula.js?v=1.0.4"></script>
 </body>
 
 </html>
