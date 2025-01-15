@@ -1,0 +1,1 @@
+<img src="https://appit.itsup.edu.ec/estudiante/files/<?php echo $_GET['img']; ?>" alt="" style="width: 100%; height: auto;">
