@@ -5,9 +5,7 @@
         
         public function index()
         {
-            $carreras = Carrera::findAll();
-
-            view('asistenciadocente.index', ["carreras" => $carreras]);
+            view("asistenciadocente.index", []);
         }
 
         public function viewlistaestudiantes()

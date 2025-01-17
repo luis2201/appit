@@ -26,7 +26,7 @@
 
       $res = Registrocalificacion::viewListaEstudianteMateria($idperiodo, $idmateria);
       foreach ($res as $row) {
-        $rows .= '<tr style="height: 20px; font-size:0.7vw">
+        $rows .= '<tr style="height: 20px; font-size:1.15vw">
                     <td class="text-center align-middle" style="width:3%;">'.$i++.'</td>
                     <td class="text-center align-middle" style="width:3%;"><input id="idmatricula-'.$row->idmatricula.'" type="text" style="background: #fff; border: 0; width:40px; text-align: center;" value="'.$row->idmatricula.'" disabled></td>
                     <td class="align-middle">'.$row->estudiante.'</td>';

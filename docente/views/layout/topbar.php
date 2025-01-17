@@ -11,9 +11,10 @@
                             $periodos = Periodo::findActivo();                             
                             foreach($periodos as $row):                                
                                 $idperiodo = $row->idperiodo;
+                                $periodo = $row->periodo;
                         ?>
                         <input type="hidden" id="idperiodo" value="<?php echo Main::encryption($idperiodo); ?>">
-                        <h6 id="periodo" class="text-danger"><?php echo $row->periodo; ?></h6>
+                        <h6 id="periodo" class="text-danger"><?php echo $periodo; ?></h6>
                         <?php                             
                             endforeach; 
                         ?>

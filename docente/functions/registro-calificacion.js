@@ -32,10 +32,10 @@ cmbMateria.addEventListener('change', async function () {
       text: "Primero",
       value: "1",
     }));
-    $('#idparcial').append($('<option />', {
-      text: "Segundo",
-      value: "2",
-    }));
+    // $('#idparcial').append($('<option />', {
+    //   text: "Segundo",
+    //   value: "2",
+    // }));
   } else{
     $('#idparcial').append($('<option />', {
       text: "-- Seleccione Parcial --",

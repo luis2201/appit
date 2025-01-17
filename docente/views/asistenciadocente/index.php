@@ -15,7 +15,7 @@
 <div class="container-fluid">
   <div class="card border-bottom-primary">
     <div class="card-header bg-primary">
-
+      
     </div>
     <div class="card-body">
         <!-- Parámetros de búsqueda -->
@@ -26,9 +26,9 @@
                         <label for="idcarrera">Carrera</label>
                         <select name="idcarrera" id="idcarrera" class="form-select">
                           <option value="">-- Seleccione Carrera --</option>
-                          <?php foreach ($carreras as $row): ?>
-                              <option value="<?php echo Main::encryption($row->idcarrera); ?>"><?php echo $row->carrera; ?></option>
-                          <?php endforeach; ?>
+                          <?php //foreach ($carreras as $row): ?>
+                              <option value="<?php //echo Main::encryption($row->idcarrera); ?>"><?php //echo $row->carrera; ?></option>
+                          <?php //endforeach; ?>
                         </select>
                     </div>
                     <div class="col-md-6">
@@ -81,7 +81,7 @@
 <!--    Scripts -->
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-<script src="<?php echo DIR; ?>functions/asistencia-docente.js?v=1.0.9"></script>
+<script src="<?php echo DIR; ?>functions/asistencia-docente.js?v=1.2.3"></script>
 </body>
 <style>
 

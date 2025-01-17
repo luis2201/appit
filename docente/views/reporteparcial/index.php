@@ -82,7 +82,7 @@
                   <div class="col-12 mb-2 text-center">
                     <img src="<?php DIR; ?>img/header_report.png" alt="">
                     <h6 class="m-2"><strong>Alumnos Matriculados</strong></h6>
-                    <h6 style="margin-top: -10px">Periodo Académico: Noviembre 2022-Abril 2023</h6>
+                    <h6 style="margin-top: -10px"><?php echo $periodo; ?></h6>
                   </div>
                 </div>
                 <div class="row">

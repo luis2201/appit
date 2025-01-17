@@ -146,12 +146,13 @@
                 $periodos = Periodo::findActivo(); 
 
                 foreach($periodos as $row):
-                    if($row->idperiodo == 21){
+                    if($row->idperiodo == 28){
                         $idperiodo = $row->idperiodo;
                     }
                 endforeach;
 
                 $res = Docente::validateTutor($idperiodo, $_SESSION['idusuario_appit']);
+        
                 if(count($res)){
             
             ?>            

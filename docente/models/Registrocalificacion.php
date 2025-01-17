@@ -42,7 +42,7 @@
 
         public static function validafecha(){
             $db = new DB();
-            $prepare = $db->prepare("SELECT * FROM tb_configuracion_calificaciones WHERE idperiodo = 21 AND idparcial = 1");
+            $prepare = $db->prepare("SELECT * FROM tb_configuracion_calificaciones WHERE idperiodo = 28 AND idparcial = 1");
             $prepare->execute();
     
             return $prepare->fetchAll(PDO::FETCH_CLASS, Registrocalificacion::class);

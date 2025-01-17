@@ -28,7 +28,7 @@
               <?php 
                 // $param = [":idperiodo" => 21, ":iddocente" => $_SESSION["idusuario_appit"]];
                 // $materias = Materia::findMateriaIdDocente($param);
-                $carreras = Carrera::findCarreraIdDocente([":idperiodo" => 21, ":iddocente" => $_SESSION["idusuario_appit"]]);
+                $carreras = Carrera::findCarreraIdDocente([":idperiodo" => 28, ":iddocente" => $_SESSION["idusuario_appit"]]);
 
                 foreach($carreras as $row): 
               ?>
@@ -62,7 +62,7 @@
                   <div class="col-12 mb-2 text-center">
                     <img src="<?php DIR; ?>img/header_report.png" alt="">
                     <h6 class="m-2"><strong>Alumnos Matriculados</strong></h6>
-                    <h6 style="margin-top: -10px">Periodo Académico: Mayo - Octubre 2024</h6>
+                    <h6 style="margin-top: -10px"><?php echo $periodo; ?></h6>
                   </div>
                 </div>
                 <div class="row" style="font-size:0.8em;">

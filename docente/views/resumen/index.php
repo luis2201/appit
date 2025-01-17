@@ -54,7 +54,7 @@
                   <div class="col-12 text-center">
                     <img src="<?php DIR; ?>img/header_report.png" alt="">
                     <h6 class="m-2"><strong>Resumen del Periodo Académico</strong></h6>
-                    <h6 style="margin-top: -10px">Periodo Académico: Mayo - Octubre 2024</h6>
+                    <h6 style="margin-top: -10px"><?php echo $periodo; ?></h6>
                   </div>
                 </div>                
                 <div class="row" style="font-size: 12px"> 

@@ -5,8 +5,19 @@ var modalAsistencia = new bootstrap.Modal(document.getElementById('modalAsistenc
 
 var docente = "";
 var materia = "";
-
 var cmbIdCarrera = document.getElementById("idcarrera");
+
+$('document').ready(async function(){
+  await axios.post(DIR + 'carrera/findallidperiodo/', {
+    idperiodo
+  })
+  .then(function (res){
+    let carreras = res.data;
+
+    document.getElementById("idcarrera").innerHTML = carreras;
+  });
+});
+
 cmbIdCarrera.addEventListener("change", async function(){
   var optdocente = document.querySelectorAll('#iddocente option');
   optdocente.forEach(o => o.remove());

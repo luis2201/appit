@@ -12,6 +12,19 @@
       return $prepare->fetchAll(PDO::FETCH_CLASS, Carrera::class);
     }
 
+    public static function findAllIdPeriodo($params)
+    {
+      $db = new DB();
+      $prepare = $db->prepare("SELECT C.idcarrera, C.carrera
+                              FROM tb_malla M
+                                INNER JOIN tb_carrera C ON M.idcarrera = C.idcarrera
+                              WHERE M.idperiodo = :idperiodo
+                              GROUP BY C.idcarrera");
+      $prepare->execute($params);
+
+      return $prepare->fetchAll(PDO::FETCH_CLASS, Carrera::class);
+    }
+
     public static function findAllValidacion($params)
     {
       $db = new DB();

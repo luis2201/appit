@@ -58,7 +58,7 @@
             
             foreach($resp as $row){
                 $s = 1;
-                $tbody1 = '<tr style="font-size: 0.8em;">
+                $tbody1 = '<tr style="font-size: 0.9em;">
                             <td class="text-center">'.$id++.'</td>
                             <td style="font-size:0.8em">'.$row->alumnos.'</td>';
                 

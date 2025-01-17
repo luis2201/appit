@@ -1,5 +1,16 @@
 var idperiodo = document.getElementById("idperiodo").value;
 
+$('document').ready(async function(){
+  await axios.post(DIR + 'carrera/findallidperiodo/', {
+    idperiodo
+  })
+  .then(function (res){
+    let carreras = res.data;
+
+    document.getElementById("idcarrera").innerHTML = carreras;
+  });
+});
+
 var cmbIdCarrera = document.getElementById("idcarrera");
 cmbIdCarrera.addEventListener("change", async function(){
   var optdocente = document.querySelectorAll('#iddocente option');
