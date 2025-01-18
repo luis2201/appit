@@ -35,6 +35,12 @@
 
             </select>
           </div>
+          <div class="col-md-2">
+            <label for="idmateria">Fecha</label>
+            <input type="date" class="form-control">
+          </div>
+        </div>
+        <div class="row">
           <div class="col-md-2 mt-3">
             <button id="btnMostrar" type="button" class="btn btn-primary btn-sm btn-block mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-backdrop="static" data-keyboard="false">
             Ver calificaciones
