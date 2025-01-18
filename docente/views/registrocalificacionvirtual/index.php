@@ -43,7 +43,7 @@
             <select name="idmateria" id="idmateria" class="form-select">
               <option value="">-- Seleccione Materia --</option>
               <?php 
-                $param = [":idperiodo" => 21, ":iddocente" => $_SESSION["idusuario_appit"]];
+                $param = [":idperiodo" => 28, ":iddocente" => $_SESSION["idusuario_appit"]];
                 $materias = Materia::findMateriaIdDocente($param);
 
                 foreach($materias as $row): 
@@ -91,7 +91,7 @@
                 </div>                
                 <table id="tbCuadro" class="table table-stripped table-responsive ajuste" width="100%" cellspacing="0" cellpadding="0" style="margin-top: -20px;">
                   <thead class="bg-primary text-light text-center">
-                    <tr style="height: 20px; font-weight: bold;">
+                    <tr style="height: 20px; font-weight: bold; font-size:0.7vw">
                       <td scope="col" class="text-center align-middle" rowspan="2">#</td>
                       <td scope="col" class="text-center align-middle verticalText" rowspan="2">MAT. N°</td>
                       <td scope="col" class="text-center align-middle" rowspan="2">NOMINA</td>
@@ -160,7 +160,7 @@
 <!-- Scripts -->
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 <script src="<?php echo DIR; ?>functions/global.js?v=1.0.1"></script>
-<script src="<?php echo DIR; ?>functions/registrocalificacion-virtual.js?v=1.1.4"></script>
+<script src="<?php echo DIR; ?>functions/registrocalificacion-virtual.js?v=1.1.6"></script>
 </body>
 <style>
 
