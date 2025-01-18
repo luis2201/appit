@@ -41,9 +41,29 @@
           </div>
         </div>
         <div class="row">
+          <div class="col-md-6 mt-2">
+            <label for="idtipoactividad">Tipo de Actividad</label>
+            <select name="idtipoactividad" id="idtipoactividad" class="form-select">
+              <option value="">-- Seleccione Tipo de Actividad --</option>
+            </select>
+          </div>
+          <div class="col-md-6 mt-2">
+            <label for="idsala">Sala de Simulación</label>
+            <select name="idsala" id="idsala"class="form-select">
+              <option value="">-- Seleccione de Simulación --</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10 mt-2">
+            <label for="idestudiante">Ayudante de Simulación</label>
+            <select name="idestudiante" id="idestudiante"class="form-select">
+              <option value="">-- Seleccione Ayudante de Simulación --</option>
+            </select>
+          </div>
           <div class="col-md-2 mt-3">
-            <button id="btnMostrar" type="button" class="btn btn-primary btn-sm btn-block mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-backdrop="static" data-keyboard="false">
-            Ver calificaciones
+            <button id="btnMostrar" type="button" class="btn btn-primary btn-sm btn-block">
+              Agendar Actividad 
             </button>
           </div>
         </div>
