@@ -21,6 +21,28 @@
             echo json_encode($options);
         }
 
+        public function findallidperiodoiddocente()
+        {
+            $data = json_decode(file_get_contents('php://input'));
+
+            $idperiodo = Main::limpiar_cadena($data->idperiodo);
+            $iddocente = Main::limpiar_cadena($data->iddocente);
+
+            $idperiodo = Main::decryption($idperiodo);
+            $iddocente = Main::decryption($iddocente);
+
+            $param = [":idperiodo" => $idperiodo, ":iddocente" => $iddocente];
+            $resp = Carrera::findAllIdPeriodoIdDocente($param);
+
+            $options = '<option value="">-- Seleccione Carrera --</option>';
+
+            foreach ($resp as $row) {
+                $options .= '<option value="'.Main::encryption($row->idcarrera).'">'.$row->carrera.'</option>';
+            }
+
+            echo json_encode($options);
+        }
+
         public function findallvalidacion()
         {
             $data = json_decode(file_get_contents('php://input'));

@@ -25,6 +25,22 @@
       return $prepare->fetchAll(PDO::FETCH_CLASS, Carrera::class);
     }
 
+    public static function findAllIdPeriodoIdDocente($params)
+    {
+      $db = new DB();
+      $prepare = $db->prepare("SELECT C.idcarrera, C.carrera
+                              FROM tb_carga_horaria R
+                                INNER JOIN tb_detalle_cargahoraria D ON R.idcarga_horaria = D.idcarga_horaria
+                                INNER JOIN tb_carrera C ON D.idcarrera = C.idcarrera
+                              WHERE R.idperiodo = :idperiodo
+                              AND R.iddocente = :iddocente
+                              AND (C.idcarrera = 4 OR C.idcarrera = 37 OR C.idcarrera = 38 OR C.idcarrera = 48)
+                              GROUP BY C.idcarrera");
+      $prepare->execute($params);
+
+      return $prepare->fetchAll(PDO::FETCH_CLASS, Carrera::class);
+    }
+
     public static function findAllValidacion($params)
     {
       $db = new DB();

@@ -36,18 +36,26 @@
             </select>
           </div>
           <div class="col-md-2">
-            <label for="idmateria">Fecha</label>
-            <input type="date" class="form-control">
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" name="fecha" class="form-control">
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6 mt-2">
+          <div class="col-md-2 mt-2">
+            <label for="idmateria">Hora Inicio</label>
+            <input type="time" id="horainicio" name="horainicio" class="form-control">
+          </div>
+          <div class="col-md-2 mt-2">
+            <label for="idmateria">Hora Fin</label>
+            <input type="time" id="horafin" name="horafin" class="form-control">
+          </div>
+          <div class="col-md-4 mt-2">
             <label for="idtipoactividad">Tipo de Actividad</label>
             <select name="idtipoactividad" id="idtipoactividad" class="form-select">
               <option value="">-- Seleccione Tipo de Actividad --</option>
             </select>
           </div>
-          <div class="col-md-6 mt-2">
+          <div class="col-md-4 mt-2">
             <label for="idsala">Sala de Simulación</label>
             <select name="idsala" id="idsala"class="form-select">
               <option value="">-- Seleccione de Simulación --</option>
@@ -78,7 +86,7 @@
 <!-- Scripts -->
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-<script src="<?php echo DIR; ?>functions/simulaciones.js?v=1.0.0"></script>
+<script src="<?php echo DIR; ?>functions/simulaciones.js?v=1.0.2"></script>
 </body>
 <style>
 
