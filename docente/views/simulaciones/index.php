@@ -42,11 +42,11 @@
         </div>
         <div class="row">
           <div class="col-md-2 mt-2">
-            <label for="idmateria">Hora Inicio</label>
+            <label for="horainicio">Hora Inicio</label>
             <input type="time" id="horainicio" name="horainicio" class="form-control">
           </div>
           <div class="col-md-2 mt-2">
-            <label for="idmateria">Hora Fin</label>
+            <label for="horafin">Hora Fin</label>
             <input type="time" id="horafin" name="horafin" class="form-control">
           </div>
           <div class="col-md-4 mt-2">
@@ -58,7 +58,7 @@
           <div class="col-md-4 mt-2">
             <label for="idsala">Sala de Simulación</label>
             <select name="idsala" id="idsala"class="form-select">
-              <option value="">-- Seleccione de Simulación --</option>
+              <option value="">-- Seleccione Sala de Simulación --</option>
             </select>
           </div>
         </div>
