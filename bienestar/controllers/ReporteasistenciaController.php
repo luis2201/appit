@@ -54,6 +54,7 @@
                 $rows .= '<tr style="font-size:0.75em">
                             <td class="text-center" style="width:4%">'.$i++.'</td>
                             <td class="text-center" style="width:7%">'.$row->idmatricula.'</td>
+                            <td class="text-center" style="width:7%">'.$row->numero_identificacion.'</td>
                             <td>'.$row->estudiante.'</td>
                             <td class="text-center" style="width:5%">'.$horas.'</td>                            
                             <td class="text-center" style="width:5%">'.$asistencias.'</td>

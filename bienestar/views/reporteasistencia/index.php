@@ -50,6 +50,7 @@
                   <tr style="height: 1em; font-weight: bold;font-size: 0.7em;">
                     <td scope="col" class="text-center align-middle">#</td>
                     <td scope="col" class="text-center align-middle verticalText">MAT. N°</td>
+                    <td scope="col" class="text-center align-middle verticalText">CÉDULA</td>
                     <td scope="col" class="text-center align-middle">NOMINA</td>
                     <td scope="col" class="text-center align-middle">DIAS LABORADOS</td>
                     <td scope="col" class="text-center align-middle">TOTAL ASISTENCIAS</td>

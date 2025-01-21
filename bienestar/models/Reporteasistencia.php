@@ -6,7 +6,7 @@
         {
             $db = new DB();
             
-            $prepare = $db->prepare("SELECT M.idmatricula, CONCAT(E.apellido1, ' ', E.apellido2, ' ', E.nombre1, ' ', E.nombre2)AS estudiante
+            $prepare = $db->prepare("SELECT M.idmatricula, CONCAT(E.apellido1, ' ', E.apellido2, ' ', E.nombre1, ' ', E.nombre2)AS estudiante, E.numero_identificacion
                                     FROM tb_matricula M 
                                         INNER JOIN tb_nivel N ON M.idnivel = N.idnivel
                                         INNER JOIN tb_detalle_matricula D ON M.idmatricula = D.idmatricula
