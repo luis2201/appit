@@ -138,7 +138,7 @@
                 $suma = ($suma>=70)?'<td class="text-center text-success" style="width:50px;">'.$suma.'</td>':'<td class="text-center text-danger" style="width:50px;">'.$suma.'</td>';
                 $resultado = ($final>=70)?'<td class="text-center" style="width:5%;">'.number_format($final,2).'</td>'
                                         :'<td class="text-center" style="width:5%;">'.number_format($final,2).'</td>';
-                $rows.='<tr style="height: 30px; border: black 0px solid; font-size:0.7vw">
+                $rows.='<tr style="height: 30px; border: black 0px solid; font-size:0.65vw">
                             <td class="text-center" style="width:5%;">'.$i++.'</td>
                             <td class="text-center" style="width:9%;">'.$row->idmatricula.'</td>
                             <td>'.$row->estudiante.'</td>
