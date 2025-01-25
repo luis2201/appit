@@ -81,7 +81,7 @@ btnMostrar.addEventListener("click", async function (){
   .then(function (res){   
     let estudiantes = res.data;    
     tbody.innerHTML = estudiantes;
-    
+    bloqueo();
     var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {keyboard: false})
     myModal.show();
 
@@ -435,5 +435,17 @@ function filter(__val__){
      return false;
   }
   
+}
+
+//Bloqueando elcuadro de calificaciones para que solo permita imprimir
+function bloqueo()
+{
+  const div = document.getElementById("tbLista");
+  const inputs = div.querySelectorAll("input, textarea, button, select");
+
+  inputs.forEach(element => {
+    element.disabled = true; // Deshabilita los elementos interactivos
+    element.style.color = "black"; // Mantén el texto en color negro
+  });
 }
 

@@ -154,7 +154,7 @@
 <!-- Scripts -->
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-<script src="<?php echo DIR; ?>functions/registro-calificacion.js?v=2.1.8"></script>
+<script src="<?php echo DIR; ?>functions/registro-calificacion.js?v=2.1.9"></script>
 </body>
 <style>
 
