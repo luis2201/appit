@@ -119,7 +119,7 @@
                 $idperiodo = $row->idperiodo;
             endforeach;
 
-            $params = [":idperiodo" => 21, ":idestudiante" => Main::decryption($_SESSION['idestudiante_appit'])];            
+            $params = [":idperiodo" => 28, ":idestudiante" => Main::decryption($_SESSION['idestudiante_appit'])];            
             $resp = Seccion::findSeccionIdEstudiante($params);
             
             foreach ($resp as $row) {                     

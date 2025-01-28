@@ -70,7 +70,7 @@
             $idestudiante = Main::limpiar_cadena($data->idestudiante);
 
             $idestudiante = Main::decryption($idestudiante);
-            // $idperiodo = Main::decryption($idperiodo);
+            $idperiodo = Main::decryption($idperiodo);
             
             $resp = Resumen::findIdMatricula([":idperiodo" => $idperiodo, ":idestudiante" => $idestudiante]);
             foreach ($resp as $row) {

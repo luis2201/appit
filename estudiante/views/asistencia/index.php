@@ -16,7 +16,7 @@
         <div class="container-fluid border-dark">
           <div class="card border-bottom-info">
             <div class="card-header bg-info">
-              <h6 class="text-light"><strong>Periodo II (Noviembre 2023 - Abril 2024)</strong></h6>
+              <h6 class="text-light"><strong>Periodo II (Noviembre 2024 - Abril 2025)</strong></h6>
             </div>
             <div class="card-body table-responsive">
               <table id="tbLista" class="table table-bordered dataTable table-striped table-responsive" id="tbLista1" width="100%" cellspacing="0" style="font-size:12px">

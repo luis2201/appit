@@ -16,7 +16,7 @@
         <div class="container-fluid border-dark">
           <div class="card border-bottom-info">
             <div class="card-header bg-info">
-              <h6 class="text-light"><strong>Periodo I (Mayo - Octubre 2024)</strong></h6>
+              <h6 class="text-light"><strong>Periodo II (Noviembre - Abril 2025)</strong></h6>
             </div>
             <div class="card-body">
               <div class="container">
@@ -47,7 +47,7 @@
 
       <?php include_once './views/layout/footer.php'; ?>
       <script src="<?php echo DIR; ?>functions/global.js?v=1.0.0"></script>
-      <script src="<?php echo DIR; ?>functions/resumen-virtual.js?v=1.0.2"></script>
+      <script src="<?php echo DIR; ?>functions/resumen-virtual.js?v=1.0.3"></script>
 </body>
 
 </html>
